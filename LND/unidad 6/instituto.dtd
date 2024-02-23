@@ -1,0 +1,11 @@
+<!DOCTYPE instituto [
+  <!ELEMENT instituto (clase+)>
+  <!ELEMENT clase (alumno+)>
+  <!ATTLIST clase grupo CDATA #REQUIRED>
+  <!ATTLIST clase curso CDATA #REQUIRED>
+  <!ELEMENT alumno (nombre, apellidos)>
+  <!ATTLIST alumno sexo CDATA #REQUIRED>
+  <!ATTLIST alumno cial CDATA #REQUIRED>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT apellidos (#PCDATA)>
+]>

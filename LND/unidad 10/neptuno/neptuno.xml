@@ -1,0 +1,17 @@
+<neptuno>
+<articulos>
+<RefArticulo>10</RefArticulo>
+<ReferenciaProveedor>100</ReferenciaProveedor>
+<NombreArticulo>huevos</NombreArticulo>
+<NombreCategoria>alimentación</NombreCategoria>
+<PrecioUnidad>30</PrecioUnidad>
+<UnidadesExistencia>40</UnidadesExistencia>
+</articulos>
+<clientes>
+</clientes>
+<proveedores>
+<ReferenciaProveedor>100</ReferenciaProveedor>
+<NombreProveedor>David</NombreProveedor>
+<PaisProveedor>Francia</PaisProveedor>
+</proveedores>
+</neptuno>

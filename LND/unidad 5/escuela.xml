@@ -1,0 +1,35 @@
+<!DOCTYPE escuela SYSTEM "escuela.dtd">
+    <escuela>
+        <clase nombre="Matemáticas" tiene_pizarra="true">
+            <profesor>
+                <nombre>Juan</nombre>
+                <apellidos>Pérez</apellidos>
+            </profesor>
+            <alumnos>
+                <alumno>
+                    <nombre>María</nombre>
+                    <apellidos>Gómez</apellidos>
+                </alumno>
+                <alumno>
+                    <nombre>Pedro</nombre>
+                    <apellidos>López</apellidos>
+                </alumno>
+            </alumnos>
+        </clase>
+        <clase nombre="Física" tiene_pizarra="false">
+            <profesor>
+                <nombre>Luis</nombre>
+                <apellidos>Martinez</apellidos>
+            </profesor>
+            <alumnos>
+                <alumno>
+                    <nombre>Laura</nombre>
+                    <apellidos>Gonzales</apellidos>
+                </alumno>
+                <alumno>
+                    <nombre>Juan</nombre>
+                    <apellidos>Dominguez</apellidos>
+                </alumno>
+            </alumnos>
+        </clase>
+    </escuela>

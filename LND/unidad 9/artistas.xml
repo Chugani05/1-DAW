@@ -1,0 +1,25 @@
+<!-- artistas.xsl -->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Selecciona los artistas que nacieron después de 1500 -->
+  <xsl:template match="/artistas">
+	<html>
+  	<body>
+    	<h2>Artistas nacidos después de 1500</h2>
+    	<xsl:apply-templates select="artista[nacimiento > 1500]"/>
+  	</body>
+	</html>
+  </xsl:template>
+
+  <!-- Muestra los datos del artista -->
+  <xsl:template match="artista">
+	<p>
+  	<strong>Nombre:</strong> <xsl:value-of select="nombreCompleto"/><br/>
+  	<strong>Año de nacimiento:</strong> <xsl:value-of select="nacimiento"/><br/>
+  	<strong>Año de fallecimiento:</strong> <xsl:value-of select="fallecimiento"/><br/>
+  	<strong>País:</strong> <xsl:value-of select="pais"/><br/>
+  	<strong>Ficha completa:</strong> <a href="{fichaCompleta}" target="_blank">Enlace a Wikipedia</a>
+	</p>
+  </xsl:template>
+
+</xsl:stylesheet>

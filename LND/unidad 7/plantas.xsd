@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://misitio.com" xmlns="http://misitio.com" elementFormDefault="qualified">
+
+    <xs:element name="inventario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="laboratorio" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="personal" type="xs:integer"/>
+                            <xs:element name="ultimainspeccion" type="xs:integer"/>
+                            <xs:element name="planta" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombrecomun" type="xs:string"/>
+                                        <xs:element name="nombrebotanico" type="xs:string"/>
+                                        <xs:element name="clima" type="xs:string"/>
+                                        <xs:element name="luz" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="codigo" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

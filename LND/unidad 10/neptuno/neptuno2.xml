@@ -1,0 +1,36 @@
+<neptuno>
+    <articulos>
+        <articulo>
+            <RefArticulo>10</RefArticulo>
+            <ReferenciaProveedor>100</ReferenciaProveedor>
+            <RefCliente>1</RefCliente>
+            <NombreArticulo>huevos</NombreArticulo>
+            <NombreCategoria>alimentación</NombreCategoria>
+            <PrecioUnidad>30</PrecioUnidad>
+            <UnidadesExistencia>40</UnidadesExistencia>
+        </articulo>
+        <articulo>
+            <RefArticulo>11</RefArticulo>
+            <ReferenciaProveedor>100</ReferenciaProveedor>
+            <RefCliente>1</RefCliente>
+            <NombreArticulo>zumo</NombreArticulo>
+            <NombreCategoria>bebidas</NombreCategoria>
+            <PrecioUnidad>15</PrecioUnidad>
+            <UnidadesExistencia>45</UnidadesExistencia>
+        </articulo>
+    </articulos>
+    <clientes>
+        <RefCliente>1</RefCliente>
+        <NombreCliente>Juan</NombreCliente>
+        <DireccionCliente>Taco</DireccionCliente>
+        <CiudadCliente>París</CiudadCliente>
+        <CodPostalCliente>38206</CodPostalCliente>
+        <PaisCliente>Francia</PaisCliente>
+        <TelefornoCliente>6666666</TelefornoCliente>
+    </clientes>
+    <proveedores>
+        <ReferenciaProveedor>100</ReferenciaProveedor>
+        <NombreProveedor>David</NombreProveedor>
+        <PaisProveedor>Francia</PaisProveedor>
+    </proveedores>
+</neptuno>

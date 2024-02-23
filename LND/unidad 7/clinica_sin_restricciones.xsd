@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- Define complex types for pets -->
+  <xs:complexType name="DogType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="edad" type="xs:integer"/>
+      <xs:element name="raza" type="xs:string"/>
+      <xs:element name="chip" type="xs:boolean"/>
+    </xs:sequence>
+    <xs:attribute name="sexo" type="xs:string"/>
+    <xs:attribute name="vacunado" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="ReptileType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="edad" type="xs:integer"/>
+      <xs:element name="raza" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="sexo" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="CatType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="edad" type="xs:integer"/>
+      <xs:element name="raza" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="sexo" type="xs:string"/>
+  </xs:complexType>
+
+  <!-- Define complex type for animals -->
+  <xs:complexType name="AnimalType">
+    <xs:choice>
+      <xs:element name="perro" type="DogType"/>
+      <xs:element name="reptil" type="ReptileType"/>
+      <xs:element name="gato" type="CatType"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <!-- Define complex type for clients -->
+  <xs:complexType name="ClienteType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="apellidos" type="xs:string"/>
+      <xs:element name="animal" type="AnimalType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Define the root element -->
+  <xs:element name="clinicaveterinaria" type="ClienteType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Cliente" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="codigo" type="xs:string"/>
+      <xs:attribute ref="xsi:noNamespaceSchemaLocation" use="optional" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

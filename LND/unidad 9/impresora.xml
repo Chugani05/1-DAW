@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Match the root element and apply templates -->
+  <xsl:template match="/">
+	<html>
+  	<body>
+    	<h2>Impresoras</h2>
+    	<table border="1">
+      	<tr>
+        	<th>Marca</th>
+        	<th>Modelo</th>
+      	</tr>
+      	<!-- Apply templates to each 'impresora' element -->
+      	<xsl:apply-templates select="impresoras/impresora"/>
+    	</table>
+  	</body>
+	</html>
+  </xsl:template>
+
+  <!-- Template for 'impresora' elements -->
+  <xsl:template match="impresora">
+	<tr>
+  	<td><xsl:value-of select="marca"/></td>
+  	<td><xsl:value-of select="modelo"/></td>
+	</tr>
+  </xsl:template>
+
+</xsl:stylesheet>

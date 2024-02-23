@@ -1,0 +1,7 @@
+<!ELEMENT escuela (clase+)>
+<!ELEMENT clase (profesor, alumno+)>
+<!ELEMENT profesor (nombre, apellidos?)>
+<!ELEMENT alumno (nombre, apellidos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT pizarra (#PCDATA)>
