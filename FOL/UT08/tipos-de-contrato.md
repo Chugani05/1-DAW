@@ -1,9 +1,8 @@
 **Contrato Indefinido para Programador en Empresa de Desarrollo de Software en Madrid**
 
 **[Nombre de la Empresa]**
-[Avance Tech Solutions S.L.]
-[Calle Innovación, 123]
-[28001, Madrid]
+   - Nombre completo: [Avance Tech Solutions S.L.]
+   - Dirección: [Calle Innovación, 123, 28001, Madrid]
 [CIF: B12345678]
 
 **Contrato de Trabajo Indefinido**
@@ -73,9 +72,8 @@ Fecha: [15/02/2024]
 **Renovación de Contrato Temporal para Diseñador Gráfico en Empresa de Marketing en Barcelona**
 
 **[Nombre de la Empresa]**
-[Creatividad Marketing Solutions S.L.]
-[Plaza Creativa, 56]
-[08002, Barcelona]
+   - Nombre completo: [Creatividad Marketing Solutions S.L.]
+   - Dirección: [Plaza Creativa, 56, 08002, Barcelona]
 [CIF: B87654321]
 
 **Contrato de Trabajo Temporal - Renovación**
