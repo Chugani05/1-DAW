@@ -3,7 +3,7 @@
 **[Nombre de la Empresa]**
    - Nombre completo: [Avance Tech Solutions S.L.]
    - Dirección: [Calle Innovación, 123, 28001, Madrid]
-[CIF: B12345678]
+   - Código de identificación fiscal: [CIF: B12345678]
 
 **Contrato de Trabajo Indefinido**
 
@@ -74,7 +74,7 @@ Fecha: [15/02/2024]
 **[Nombre de la Empresa]**
    - Nombre completo: [Creatividad Marketing Solutions S.L.]
    - Dirección: [Plaza Creativa, 56, 08002, Barcelona]
-[CIF: B87654321]
+   - Código de identificación fiscal: [CIF: B87654321]
 
 **Contrato de Trabajo Temporal - Renovación**
 
