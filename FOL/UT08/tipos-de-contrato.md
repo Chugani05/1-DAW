@@ -64,9 +64,9 @@ Ambas partes han revisado y aceptado los términos y condiciones establecidos en
 
 Fecha: [15/02/2024]
 
-**Firma del Empleado: _______________________________**
+**Firma del Empleado:** _______________________________
 
-**Firma del Empleador: _______________________________**
+**Firma del Empleador:** _______________________________
 
 ---
 
@@ -126,6 +126,6 @@ Ambas partes han revisado y aceptado los términos y condiciones establecidos en
 
 Fecha: [20/01/2024]
 
-**Firma del Empleado: _______________________________**
+**Firma del Empleado:** _______________________________
 
 **Firma del Empleador: _______________________________**v
