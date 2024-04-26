@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario</title>
+</head>
+<body>
+    <h1>Contacta con nosotros...</h1>
+    <form>
+        <p>
+            <lable for="inombre">Nombre:</lable>
+            <input type="text" id="iname" name="nombre">
+        </p>
+        <p>
+            <label for="isexo">Sexo:</label>
+        </p>
+        <p>
+            <p>
+                <input type="radio" id="isexo" name="Sexo">Mujer</input>
+            </p>
+            <p>
+                <input type="radio" id="isexo" name="Sexo">Hombre</input>
+            </p>
+        </p>
+        <p>
+            <label for="icurso">Estas estudiando:</label>
+            <select name="curso" id="icurso">
+                <option value="1">Primero de Administracion de Sistemas</option>
+                <option value="1">Segundo de Administracion de Sistemas</option>
+                <option value="1">Primero de Desarollo de Aplicación Web</option>
+                <option value="1">Segondo de Desarollo de Aplicación Web</option>
+            </select>
+        </p>
+        <p>
+            <label for="imensaje">Mensaje:</label>
+            <p> 
+                <textarea name="text" id="imesaje" rows="10" cols="50"></textarea>
+            </p>
+        </p>
+        <input type="submit" value="Contacta con nosotros">
+    </form>
+</body>
+</html>

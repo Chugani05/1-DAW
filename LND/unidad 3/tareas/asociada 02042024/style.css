@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+nav {
+  float: left;
+  width: 20%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  height: 100vh;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  margin-bottom: 10px;
+}
+iframe {
+  float: left;
+  width: 75%;
+  height: 100vh;
+  border: none;
+}

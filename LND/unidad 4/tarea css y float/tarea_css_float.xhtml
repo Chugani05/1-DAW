@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="author" content="Rafael Martín Mayor"/>
+		<title>Tarea CSS y Float 23/04/2024</title>
+		<style type="text/css" >
+			.contenedor {
+				margin: 0 auto;
+				font-family: Verdana, Arial;
+				text-align: justify;
+				width: 550px;
+				border-top: 7px solid gray;
+				border-left: 7px solid gray;
+				border-bottom: 7px solid rgb(49, 49, 49);
+				border-right: 7px solid rgb(49, 49, 49);
+				background-color: orange;
+			}
+			.contenedor .imagen {
+				margin-top: 7px;
+				margin-left: 7px;
+				float: left;
+			}
+			.contenedor p {
+				margin-right: 10px;
+				margin-left: 10px;
+				margin-bottom: 30px;
+			}
+			.contenedor p:not(.letraCapital) {
+				text-indent: 30px;
+			}
+
+			.contenedor .letraCapital:first-letter {
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 77px;
+				color: gray;
+				border: 1px solid black;
+				float: left;
+				margin-right: 9px;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contenedor">
+			<img class="imagen" src="iespuerto.png" alt="Logo Puerto Cruz" />
+			<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. 
+			</p>
+			<p> Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p class="letraCapital"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+	</body>
+</html>
