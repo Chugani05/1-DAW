@@ -1,8 +1,5 @@
 <div align="justify";>
 
-
-
-
 # Proyecto BBDD 1ºDAW
 
 
