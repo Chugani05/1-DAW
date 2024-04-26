@@ -5,5 +5,5 @@
 </div>
 
 ## Contenido
-- [Bucles](https://github.com/Chugani05/programacion/tree/main/ut2/bucles)
-- [Condicionales](https://github.com/Chugani05/programacion/tree/main/ut2/condicionales)
+- [Bucles](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut2/bucles/README.md)
+- [Condicionales](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut2/condicionales/README.md)

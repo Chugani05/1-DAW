@@ -5,7 +5,7 @@
 </div>
 
 ## Contenido
-- [Listas](https://github.com/Chugani05/programacion/tree/main/ut3/listas)
-- [Diccionarios](https://github.com/Chugani05/programacion/tree/main/ut3/diccionarios)
-- [Conjuntos](https://github.com/Chugani05/programacion/tree/main/ut3/conjuntos)
-- [Ficheros](https://github.com/Chugani05/programacion/tree/main/ut3/ficheros)
+- [Listas](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut3/listas/README.md)
+- [Diccionarios](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut3/diccionarios/README.md)
+- [Conjuntos](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut3/conjuntos/README.md)
+- [Ficheros](https://github.com/Chugani05/1-DAW/blob/main/PRO/ut3/ficheros/README.md)
