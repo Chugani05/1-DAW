@@ -5,6 +5,6 @@
 </div>
 
 ## Contenido
-- [Diagramas de casos de uso](#diagramas-de-casos-de-uso)
-- [Diagramas de secuencia](#diagramas-de-secuencia)
-- [Diagramas de actividades](#diagramas-de-actividades)
+- [Diagramas de casos de uso](https://github.com/Chugani05/1-DAW/tree/main/ETS/diagramas/diagramas/caso%20de%20uso)
+- [Diagramas de secuencia](https://github.com/Chugani05/1-DAW/tree/main/ETS/diagramas/diagramas/secuencia)
+- [Diagramas de actividades](https://github.com/Chugani05/1-DAW/tree/main/ETS/diagramas/diagramas/actividad)
