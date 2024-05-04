@@ -1,4 +1,4 @@
-# Normalización
+# Unidad 4 - Normalización
 La normalización, en términos generales, se refiere al proceso de organizar datos en una base de datos de manera eficiente para reducir la redundancia y mejorar la integridad de los datos. Se utiliza comúnmente en el diseño de bases de datos relacionales. Aquí hay una explicación breve y resumida de los conceptos clave:
 
 **Eliminación de redundancias:** La normalización busca minimizar la redundancia en una base de datos al organizar la información de manera eficiente. Se logra dividiendo las tablas grandes en tablas más pequeñas y relacionadas.
