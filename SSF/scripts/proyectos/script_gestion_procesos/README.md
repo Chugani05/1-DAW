@@ -1,4 +1,4 @@
-# script_gestion_procesos
+# Script-de-Gestion-de-Procesos
 
 El script se debe entregar por PAREJAS (Debe ser una pareja DIFERENTE que la de los scripts anteriores).
 

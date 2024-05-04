@@ -74,31 +74,14 @@ funcion_principal() {
         read -p "Por favor, seleccione una opción (1-7): " opcion
 
         case $opcion in
-            1|a|A) 
-                dpkg -s "$nombre_paquete" | grep Version
-                ;;
-            2|b|B) 
-                sudo apt install --reinstall "$nombre_paquete"
-                ;;
-            3|c|C) 
-                sudo apt install --upgrade "$nombre_paquete"
-                ;;
-            4|d|D) 
-                sudo apt list --upgradable "$nombre_paquete"
-                ;;
-            5|e|E) 
-                sudo apt remove "$nombre_paquete"
-                ;;
-            6|f|F) 
-                sudo apt purge "$nombre_paquete"
-                ;;
-            7|g|G) 
-                echo "Saliendo"
-                exit 0 
-                ;;
-            *) 
-                echo "Error: $opcion opción inválida."
-                ;;
+            1|a|A) dpkg -s "$nombre_paquete" | grep Version ;;
+            2|b|B) sudo apt install --reinstall "$nombre_paquete" ;;
+            3|c|C) sudo apt install --upgrade "$nombre_paquete" ;;
+            4|d|D) sudo apt list --upgradable "$nombre_paquete" ;;
+            5|e|E) sudo apt remove "$nombre_paquete" ;;
+            6|f|F) sudo apt purge "$nombre_paquete" ;;
+            7|g|G) echo "Saliendo" ;;
+            *) echo "Error: $opcion opción inválida." ;;
         esac
     else
         echo "El paquete '$nombre_paquete' no está instalado."

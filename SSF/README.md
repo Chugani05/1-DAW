@@ -1,4 +1,4 @@
-# Sistemas Informaticos
+# Sistemas_Informaticos
 
 <div align=center>
 <img src="../extras/pixel-jeff-matrix-s.gif" alt="me" width="60%">
