@@ -1,4 +1,4 @@
-# UT1
+# TIPOS DE DATOS
 
 <div align=center>
 <img src="../../extras/pixel-jeff-matrix-s.gif" alt="me" width="60%">

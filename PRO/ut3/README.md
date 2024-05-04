@@ -1,4 +1,4 @@
-# UT3
+# ESTRUCTURAS DE DATOS
 
 <div align=center>
 <img src="../../extras/pixel-jeff-matrix-s.gif" alt="me" width="60%">
