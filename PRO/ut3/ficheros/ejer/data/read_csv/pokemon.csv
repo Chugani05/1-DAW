@@ -1,0 +1,11 @@
+Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary
+Bulbasaur,Grass,Poison,318,45,49,49,65,65,45,1,False
+Ivysaur,Grass,Poison,405,60,62,63,80,80,60,1,False
+Venusaur,Grass,Poison,525,80,82,83,100,100,80,1,False
+Charizard,Fire,Flying,534,78,84,78,109,85,100,1,False
+Butterfree,Bug,Flying,395,60,45,50,90,80,70,1,False
+Weedle,Bug,Poison,195,40,35,30,20,20,50,1,False
+Kakuna,Bug,Poison,205,45,25,50,25,25,35,1,False
+Beedrill,Bug,Poison,395,65,90,40,45,80,75,1,False
+Pidgey,Normal,Flying,251,40,45,40,35,35,56,1,False
+Pidgeotto,Normal,Flying,349,63,60,55,50,50,71,1,False
