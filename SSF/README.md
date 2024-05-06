@@ -5,7 +5,7 @@
 </div>
 
 ## Contenido
-- [Scripts](https://github.com/Chugani05/1-DAW/tree/main/SSF/scripts)
-- [Gestión de Software -  Gestión de Procesos - Gestión de Servicios](https://github.com/Chugani05/1-DAW/tree/main/SSF/gestion-de-software_procesos_servicios)
-- [Tareas Programadas - Usuarios y Grupos](https://github.com/Chugani05/1-DAW/tree/main/SSF/tareas-programadas_y_usuarios-y-grupos)
-- [Redes](https://github.com/Chugani05/1-DAW/tree/main/SSF/redes)
+- [Scripts](./scripts/README.md)
+- [Gestión de Software -  Gestión de Procesos - Gestión de Servicios](./gestion-de-software_procesos_servicios/README.md)
+- [Tareas Programadas - Usuarios y Grupos](./tareas-programadas_y_usuarios-y-grupos/README.md)
+- [Redes](./redes/README.md)

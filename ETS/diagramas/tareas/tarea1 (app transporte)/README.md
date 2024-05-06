@@ -1,7 +1,7 @@
 # Aplicación de transporte
 En este ejercicio procederemos a analizar el diagrama de comportamiento de la siguiente imagen: 
 
-![Diagrama de comportamiento](../../diagramas/comportamiento/imagen-app-transport.png)
+![Diagrama de caso de uso](../../diagramas/caso%20de%20uso/imagen-app-transport.png)
 
 ### Actores
 | Actor | Administrador |

@@ -13,12 +13,12 @@
 <div align=justify>
 
 ## Contenido
-  1. [__Programación__](https://github.com/Chugani05/1-DAW/tree/main/PRO)
-  2. [__Sistemas informáticos__](https://github.com/Chugani05/1-DAW/tree/main/SSF)
-  3. [__Bases de datos__](https://github.com/Chugani05/1-DAW/blob/main/BAE/README.md)
-  4. [__Entornos de desarrollo__](https://github.com/Chugani05/1-DAW/tree/main/ETS)
-  5. [__Lenguajes de marcas__](https://github.com/Chugani05/1-DAW/tree/main/LND)
-  6. [__Formación y orientación laboral__](https://github.com/Chugani05/1-DAW/tree/main/FOL)
+  1. [__Programación__](./PRO)
+  2. [__Sistemas informáticos__](./SSF)
+  3. [__Bases de datos__](./BAE)
+  4. [__Entornos de desarrollo__](./ETS)
+  5. [__Lenguajes de marcas__](./LND)
+  6. [__Formación y orientación laboral__](./FOL)
      
 </div>
 

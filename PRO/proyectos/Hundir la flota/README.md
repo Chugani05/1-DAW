@@ -2,7 +2,7 @@
 Trabajo de Programación UT3
 
 
-### TAREA EVALUABLE
+## Contenido
 
 [Objetivo](#objetivo)  
 [Desarrollo del juego](#desarrollo-del-juego)  
@@ -10,11 +10,11 @@ Trabajo de Programación UT3
 [Puntuaciones](#puntuaciones)   
 [Notas](#notas)
 
-## Objetivo
+### Objetivo
 
 Escriba un programa en Python que permita jugar a **HUNDIR LA FLOTA**.
 
-## Desarrollo del juego
+### Desarrollo del juego
 
 - **Sólo juega una persona** con un tablero `board` generado aleatoriamente.
 - Este tablero (`board`) inicial tendrá un tamaño de 10x10 (como lista de listas) donde cada celda puede ser:
@@ -38,7 +38,7 @@ Escriba un programa en Python que permita jugar a **HUNDIR LA FLOTA**.
   - Puntuación hasta el momento.
 - El juego termina cuando se han hundido todos los barcos.
 
-## Ejemplo de tablero
+### Ejemplo de tablero
 
 El tablero que se proporciona inicialmente indica dónde está cada barco y sus identificadores. Aquí se puede ver un ejemplo:
 
@@ -55,7 +55,7 @@ El tablero que se proporciona inicialmente indica dónde está cada barco y sus 
 ██ ██ ██ 2A ██ ██ ██ ██ ██ ██
 ```
 
-## Puntuaciones
+### Puntuaciones
 
 | Jugada           | Puntuación              |
 | ---------------- | ----------------------- |
@@ -65,6 +65,6 @@ El tablero que se proporciona inicialmente indica dónde está cada barco y sus 
 
 > 💡 La puntuación "global" no puede ser menor que cero.
 
-## Notas
+### Notas
 
 - Utilizar sólo herramientas de Python que se hayan visto hasta el momento en clase.
