@@ -6,5 +6,5 @@
 
 ## Contenido
 - [Markdown](./markdown/README.md)
-- [Unidad 4 - Diagramas de comportamiento](./diagramas/README.md)
+- [Unidad 4 - Diagramas](./diagramas/README.md)
 - [Pytest](./pytest/README.md)
