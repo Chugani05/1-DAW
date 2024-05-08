@@ -1,13 +1,11 @@
 ## Informe sobre la Creación de la Página Web del "Libro de Recetas de Rashi"
-<img src="../../../../extras/cafe.gif" alt="animation" width="50%" /> 
-
-https://www.rookiemag.com/wp-content/uploads/2016/03/1456855014belton-5.gif
+<img src="../../../../extras/cafe.gif" alt="animation" width="50%" text-align="center"/> 
 
 ## Contenido
-- [Introducción]()
-- [Estructura y Contenido]()
-- [Conceptos Utilizados en la Creación]()
-- [Conclusiones]()
+- [Introducción](#introducción)
+- [Estructura y Contenido](#estructura-y-contenido)
+- [Conceptos Utilizados en la Creación](#conceptos-utilizados-en-la-creación)
+- [Conclusiones](#conclusiones)
 
 ### Introducción
 La página web del "Libro de Recetas de Rashi" es una plataforma digital diseñada para proporcionar una colección de recetas culinarias, junto con instrucciones detalladas para preparar cada plato. El objetivo principal de esta página es ofrecer a los usuarios una experiencia interactiva y educativa en el mundo de la cocina, inspirando y facilitando la preparación de diversas delicias gastronómicas.

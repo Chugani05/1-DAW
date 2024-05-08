@@ -34,7 +34,7 @@ form {
 
 input[type="text"],
 input[type="email"] {
-    width: calc(100% - 18px);
+    width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -47,9 +47,8 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="checkbox"] {
-    margin-right: 5px;
-    flex: 0 0 auto;
+#politica_datos input {
+    float: left;
 }
 
 button {
