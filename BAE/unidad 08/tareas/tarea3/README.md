@@ -112,12 +112,13 @@ Teniendo este ejemplo como referencia, realiza:
 ```sql
 DELIMITER //
 DROP PROCEDURE IF EXISTS aumentar_salarios_excluyendo;
-CREATE PROCEDURE aumentar_salarios_excluyendo(porcentaje DECIMAL(5,2))
+CREATE PROCEDURE aumentar_salarios_excluyendo(IN porcentaje DECIMAL(5,2))
 BEGIN
     DECLARE done INT DEFAULT FALSE;
     DECLARE emp_id INT;
+    DECLARE emp_nombre VARCHAR(100);
     DECLARE emp_salario DECIMAL(10, 2);
-    DECLARE cur CURSOR FOR SELECT id, salario FROM empleados WHERE salario <= 3200;
+    DECLARE cur CURSOR FOR SELECT id, nombre, salario FROM empleados;
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
 
     OPEN cur;
@@ -126,21 +127,24 @@ BEGIN
         IF done THEN
             LEAVE read_loop;
         END IF;
-        UPDATE empleados SET salario = salario * (salario * ) WHERE id = emp_id;
+        IF emp_salario <= 3200 THEN
+            UPDATE empleados SET salario = salario * (1 + porcentaje / 100) WHERE id = emp_id;
+        END IF;
     END LOOP;
     CLOSE cur;
 END //
 DELIMITER ;
 ```
-call aumentar_salarios_excluyendo(5);
 
-+----+--------+---------+
-| id | nombre | salario |
-+----+--------+---------+
-|  1 | Juan   | 3150.00 |
-|  2 | María  | 3500.00 |
-|  3 | Pedro  | 3360.00 |
-+----+--------+---------+
+Realicemos la llamada al procedimiento:
+```sql
+call aumentar_salarios_excluyendo(5);
+```
+
+Salida:
+```sql
+
+```
 
 
 2. Escribe un procedimiento almacenado que calcule el salario anual de cada empleado (asumiendo que trabajan todo el año) y lo imprima.
@@ -168,6 +172,17 @@ BEGIN
 END //
 DELIMITER ;
 ```
+
+Realicemos la llamada al procedimiento:
+```sql
+call calcular_salario_anual();
+```
+
+Salida:
+```sql
+
+```
+
 
 3. Escribe un procedimiento almacenado que cuente y muestre el número de empleados en cada rango de salario (por ejemplo, menos de 3000, entre 3000 y 5000, más de 5000). El procedimiento debe tener parámetros de entrada.
 ```sql
