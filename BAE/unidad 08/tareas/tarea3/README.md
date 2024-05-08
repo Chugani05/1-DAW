@@ -213,7 +213,7 @@ Salida:
 
 Realicemos la llamada al procedimiento:
 ```sql
-call calcular_salario_anual();
+call ();
 ```
 
 Salida:
