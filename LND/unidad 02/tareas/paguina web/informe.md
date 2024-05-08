@@ -1,6 +1,8 @@
 ## Informe sobre la Creación de la Página Web del "Libro de Recetas de Rashi"
 <img src="../../../../extras/cafe.gif" alt="animation" width="50%" /> 
 
+https://www.rookiemag.com/wp-content/uploads/2016/03/1456855014belton-5.gif
+
 ## Contenido
 - [Introducción]()
 - [Estructura y Contenido]()
