@@ -24,5 +24,4 @@ class Fibonacci:
 
 
 def run(n: int):
-    fib = Fibonacci(n)
-    return list(fib)
+    return list(Fibonacci(n))
