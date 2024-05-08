@@ -1,5 +1,5 @@
 ## Informe sobre la Creación de la Página Web del "Libro de Recetas de Rashi"
-![image](https://i.gifer.com/xK.gif)
+<img src="../../../../extras/cafe.gif" alt="animation" width="50%" /> 
 
 ## Contenido
 - [Introducción]()
