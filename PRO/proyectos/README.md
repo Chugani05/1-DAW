@@ -5,5 +5,5 @@
 </div>
 
 ## Contenido
-- [Hundir la flota](../proyectos/Hundir%20la%20flota/README.md)
+- [Hundir la flota](../proyectos/Sink%20the%20float/README.md)
 - [Poker](../proyectos/Poker/README.md)
