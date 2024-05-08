@@ -1,4 +1,11 @@
 ## Informe sobre la Creación de la Página Web del "Libro de Recetas de Rashi"
+![image](https://i.gifer.com/xK.gif)
+
+## Contenido
+- [Introducción]()
+- [Estructura y Contenido]()
+- [Conceptos Utilizados en la Creación]()
+- [Conclusiones]()
 
 ### Introducción
 La página web del "Libro de Recetas de Rashi" es una plataforma digital diseñada para proporcionar una colección de recetas culinarias, junto con instrucciones detalladas para preparar cada plato. El objetivo principal de esta página es ofrecer a los usuarios una experiencia interactiva y educativa en el mundo de la cocina, inspirando y facilitando la preparación de diversas delicias gastronómicas.
