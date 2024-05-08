@@ -1,5 +1,5 @@
 # Tarea 1
-# Tarea Procedimientos
+## Tarea Procedimientos
 
 <div align="center">
 <img src="https://danielme.com/wp-content/uploads/2023/08/image-16.png" width="300">
@@ -7,8 +7,8 @@
 
 En este ejercicio, vamos a trabajar en la creación de una base de datos simple utilizando MySQL. Esta base de datos estará diseñada para __administrar información de usuarios y productos__. Una vez que hayamos creado la base de datos y las tablas necesarias, vamos a implementar procedimientos almacenados y funciones para realizar operaciones comunes sobre estos datos.
 
-## Pasos:
-### Crea la bbdd. _ Utilizaremos comandos SQL para crear una base de datos llamada "SimpleDB" que contendrá dos tablas: "Users" para almacenar información de usuarios y "Products" para almacenar información de productos._
+### Pasos:
+#### Crea la bbdd. _ Utilizaremos comandos SQL para crear una base de datos llamada "SimpleDB" que contendrá dos tablas: "Users" para almacenar información de usuarios y "Products" para almacenar información de productos._
   ```sql
   CREATE DATABASE IF NOT EXISTS SimpleDB;
 
@@ -27,7 +27,7 @@ En este ejercicio, vamos a trabajar en la creación de una base de datos simple 
   );
   ```
 
-### Realiza la inserción de algunos datos de prueba. Realizar la inserción de al menos 3 elementos más en cada tabla.
+#### Realiza la inserción de algunos datos de prueba. Realizar la inserción de al menos 3 elementos más en cada tabla.
   ```sql
   INSERT INTO Users (UserName, Email) VALUES ('Juan', 'juan@example.com');
   INSERT INTO Users (UserName, Email) VALUES ('María', 'maria@example.com');
@@ -60,8 +60,8 @@ select * from Users;
 |      6 | Oliver   | oliver@example.com |
 
 
-### Crea __procedimientos almacenados__ para realizar operaciones como __insertar un nuevo usuario, actualizar el nombre de un usuario__, etc. Realiza la invocación y la verificación de que ha funcionado correctamente.
-#### Procedimiento para insertar un nuevo usuario.
+#### Crea __procedimientos almacenados__ para realizar operaciones como __insertar un nuevo usuario, actualizar el nombre de un usuario__, etc. Realiza la invocación y la verificación de que ha funcionado correctamente.
+##### Procedimiento para insertar un nuevo usuario.
 ```sql
 DELIMITER //
 DROP PROCEDURE IF EXISTS Create_User;
@@ -92,7 +92,7 @@ select * from Users;
 |      7 | Rashi    | rashi@example.com  |
 
 
-#### Procedimiento para actualizar el nombre de un usuario. 
+##### Procedimiento para actualizar el nombre de un usuario. 
 ```sql
 DELIMITER //
 DROP PROCEDURE IF EXISTS Modify_User;
@@ -123,8 +123,8 @@ select * from Users;
 |      7 | Rashi    | rashi              |
 
 
-### Implementa funciones para realizar cálculos o consultas:
-#### Función para calcular el precio total de un conjunto de productos.
+#### Implementa funciones para realizar cálculos o consultas:
+##### Función para calcular el precio total de un conjunto de productos.
 ```sql
 DELIMITER //
 DROP FUNCTION IF EXISTS Get_Total_Price;
@@ -155,7 +155,7 @@ select sum(Price) from Products;
 |     200.08 |
 
 
-#### Función para contar el número de usuarios.
+##### Función para contar el número de usuarios.
 ```sql
 DELIMITER //
 DROP FUNCTION IF EXISTS User_Counter;

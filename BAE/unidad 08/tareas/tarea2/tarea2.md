@@ -1,7 +1,7 @@
 # Tarea 2
-# Tarea Procedimientos
+## Tarea Procedimientos
 
-## Carga de datos
+### Carga de datos
 Relizamos la carga de datos creando un archivo sql con los datos de la base de datos. Ejecuta la linea `source jardineria.sql` en la terminal de MySql, que nos proporciona una base de datos llamada jardineria que contiene las siguientes tablas:
 ```sql
 show databases;
@@ -23,8 +23,8 @@ show databases;
 | tarea72            |
 | tarea7_4           |
 
-## Se pide realizar los procedimientos y funciones:
-### Realice los siguientes procedimientos y funciones sobre la base de datos jardineria.
+### Se pide realizar los procedimientos y funciones:
+#### Realice los siguientes procedimientos y funciones sobre la base de datos jardineria.
 - Función  __calcular_precio_total_pedido__
   >__Nota__:Dado un código de pedido la función debe calcular la suma total del pedido. Tenga en cuenta que un pedido puede contener varios productos diferentes y varias cantidades de cada producto.
    - Parámetros de entrada: codigo_pedido (INT)
