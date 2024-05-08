@@ -1,18 +1,37 @@
-<p>Recibe las últimas recetas directamente en tu bandeja de entrada. ¡No te pierdas ninguna delicia!</p>
-                <form action="#" method="post">
-                    <lable for="iname">Nombre:</lable>
-                    <input type="text" id="iname" name="nombre">
-                    <br>
-                    <br>
-                    <lable for="isurname">Apellidos:</lable>
-                    <input type="text" id="isurname" name="apellido">
-                    <br>
-                    <br>
-                    <lable for="email">Correo:</lable>
-                    <input type="email" id="email" name="email">
-                    <br>
-                    <br>
-                    <button type="submit">Suscribirse</button>
-                    <br>
-                    <br>
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscription Page</title>
+    <link rel="stylesheet" href="style_formulario.css">
+</head>
+<body>
+    <header>
+        <p>Suscribite para recibir las últimas recetas directamente en tu bandeja de entrada. ¡No te pierdas ninguna delicia!</p>
+    </header>
+    <main>
+        <form action="#" method="post">
+            <lable for="iname">Nombre:</lable>
+            <input type="text" id="iname" name="nombre">
+            <br>
+            <br>
+            <lable for="isurname">Apellidos:</lable>
+            <input type="text" id="isurname" name="apellido">
+            <br>
+            <br>
+            <lable for="email">Correo:</lable>
+            <input type="email" id="email" name="email">
+            <br>
+            <br>
+            <input type="checkbox" name="politica">
+                <label for="red" name="politica">He leído y acepto la politica de privacidad</label>
+            <br>
+            <br>
+            <!-- añadir animación al boton -->
+            <button type="submit">Suscribirse</button>
+            <br>
+            <br>
+        </form>
+    </main>
+</body>
