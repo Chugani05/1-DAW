@@ -3,7 +3,7 @@
 <div align=center>
   <table>
     <tr>
-      <td><img src="./extras/pixel-jeff-matrix-s.gif" alt="me" width="90%"></td>
+      <td><img src="./extras/hacker.gif" alt="me" width="90%"></td>
       <td>Repositorio dedicado a todo lo hecho en el primer curso de Desarollo de Aplicaciones Web.
 </td>
     </tr>

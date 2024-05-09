@@ -1,7 +1,7 @@
 # PROYETOS DEL CURSO
 
 <div align=center>
-<img src="../../extras/pixel-jeff-matrix-s.gif" alt="me" width="60%">
+<img src="../../extras/hacker.gif" alt="me" width="60%">
 </div>
 
 ## Contenido
