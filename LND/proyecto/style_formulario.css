@@ -9,7 +9,7 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     animation: fadeIn 2s ease;
 }
@@ -49,6 +49,13 @@ label {
 
 #politica_datos input {
     float: left;
+}
+
+#titulo {
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 button {
