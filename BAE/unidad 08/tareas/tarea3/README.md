@@ -110,6 +110,7 @@ BEGIN
             LEAVE read_loop;
         END IF;
         UPDATE empleados SET salario = salario * (salario * 0.05) WHERE id = emp_id;
+        SELECT emp_id, emp_salario;
     END LOOP;
     CLOSE cur;
 END //
@@ -121,20 +122,13 @@ Realicemos la llamada al procedimiento:
 call aumentar_salarios_excluyendo();
 ```
 
-Veamos la tabla:
-```sql
-select * from empleados;
-```
-
 Salida:
 ```sql
-+----+--------+-----------+
-| id | nombre | salario   |
-+----+--------+-----------+
-|  1 | Juan   | 450000.00 |
-|  2 | María  |   3500.00 |
-|  3 | Pedro  | 512000.00 |
-+----+--------+-----------+
++--------+-------------+
+| emp_id | emp_salario |
++--------+-------------+
+|      3 |     3200.00 |
++--------+-------------+
 ```
 
 
@@ -172,20 +166,23 @@ Salida:
 +---------------+
 | salario_anual |
 +---------------+
-|    5400000.00 |
+|     143076.36 |
 +---------------+
+1 row in set (0,00 sec)
 
 +---------------+
 | salario_anual |
 +---------------+
-|      42000.00 |
+|      55902.00 |
 +---------------+
+1 row in set (0,00 sec)
 
 +---------------+
 | salario_anual |
 +---------------+
 |    6144000.00 |
 +---------------+
+1 row in set (0,00 sec)
 ```
 
 

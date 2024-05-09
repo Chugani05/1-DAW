@@ -21,5 +21,3 @@
   6. [__Formación y orientación laboral__](./FOL/README.md)
      
 </div>
-
-
