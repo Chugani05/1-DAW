@@ -2,7 +2,7 @@
 
 ## Índice
 - [Manejo de errores](#manejo-de-errores)
-- [Exepciones propias](#exepciones-propias)
+- [Excepciones propias](#excepciones-propias)
 - [Aserciones](#aserciones)
 
 ## Manejo de errores
@@ -81,3 +81,9 @@ def intdiv(a, b):
 ```
 
 ### Variantes en el tratamiento
+### Mostrando los errores
+### Elevando excepciones
+### Jerarquía de excepciones
+## Excepciones propias
+### Mensaje personalizado
+## Aserciones
