@@ -9,7 +9,7 @@
 ## Organización
 ## Importar un módulo
 ### Importar módulo completo
-#### RUTA DE BÚSQUEDA DE MÓDULOS
+#### Ruta de búsqueda de módulos
 ### Importar partes de un módulo
 ### Importar usando un alias
 ## Paquetes
