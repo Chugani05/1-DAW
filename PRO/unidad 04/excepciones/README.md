@@ -1,5 +1,10 @@
 # Excepciones
 
+## Índice
+- [Manejo de errores](#manejo-de-errores)
+- [Exepciones propias](#exepciones-propias)
+- [Aserciones](#aserciones)
+
 ## Manejo de errores
 En Python, las excepciones juegan un papel crucial en el manejo de errores durante la ejecución del programa. Cuando una excepción no es capturada en un punto específico de nuestro código, se propaga hacia arriba en la pila de llamadas hasta que es manejada por una función que ha hecho la llamada. Si no se encuentra un control de excepciones en toda la pila de llamadas, Python muestra un mensaje de error junto con información adicional.
 
@@ -43,7 +48,8 @@ main()
 # ZeroDivisionError: integer division or modulo by zero
 ```
 
-### Expreciones
+### Especificando excepciones
+#### Expreciones predefinidas
 Aquí tienes una lista de algunas de las excepciones predefinidas en Python que son importantes conocer para manejar errores de manera efectiva:
 
 | Error        | Descripción       | Ejemplo       |
@@ -60,3 +66,18 @@ Aquí tienes una lista de algunas de las excepciones predefinidas en Python que 
 | KeyError            | Indica que se está intentando acceder a una clave que no existe en un diccionario.             | Acceder a una clave que no existe en un diccionario `diccionario = {"a": 1, "b": 2}` `print(diccionario["c"])`               |
 | AttributeError     | Se genera cuando un objeto no tiene el atributo que se está intentando acceder.              |  Acceder a un atributo que no existe en un objeto `class Ejemplo:     pass` `objeto = Ejemplo()` `print(objeto.atributo_inexistente)`               |
 | ImportError        | Ocurre cuando un módulo no puede ser importado.              | Intentar importar un módulo que no existe `import modulo_inexistente`              |
+
+#### Agrupando expreciones 
+Si nos interesa tratar distintas excepciones con el mismo comportamiento, es posible agruparlas en una única línea:
+
+```python
+def intdiv(a, b):
+    try:
+        result = a // b
+    except (TypeError, ZeroDivisionError):
+        print('Check operands: Some of them caused errors...')
+    except Exception:
+        print('Ups. Something went wrong...')
+```
+
+### Variantes en el tratamiento
