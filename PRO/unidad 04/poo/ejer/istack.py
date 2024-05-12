@@ -24,12 +24,12 @@ class IntegerStack:
         Si la pila está llena retornar False, en otro caso retornar True'''
         if len(self.items) >= self.max_size:
             return False
-        self.items.append(item)
+        self.items.insert(0, item)
         return True
 
     def pop(self) -> int:
         '''Extraer el elemento que está en el TOP de la pila'''
-        return self.items.pop()
+        return self.items.pop(0)
 
     def top(self) -> int:
         '''Devolver el elemento que está en el TOP de la pila (sin extracción)'''
@@ -63,13 +63,12 @@ class IntegerStack:
         - Si la pila se llena al ir añadiendo elementos habrá que expandir con los valores
         por defecto'''
         result = IntegerStack()
-        with open(path) as f:
-            content = reversed(f.readlines())
-            for line in content:
-                num = int(line.strip())
-                if not result.push(num):
-                    result.expand()
-                    result.push(num)
+        content = reversed(open(path).readlines())
+        for line in content:
+            value = int(line.strip())
+            if not result.push(value):
+                result.expand()
+                result.push(value)
         return result
 
     def __getitem__(self, index: int) -> int:
@@ -105,10 +104,11 @@ class IntegerStack:
 class IntegerStackIterator:
     def __init__(self, stack: IntegerStack):
         self.stack = stack
-        self.points = len(stack)
+        self.points = 0
 
     def __next__(self) -> int:
-        if self.points <= 0:
+        if self.points >= len(self.stack):
             raise StopIteration
-        self.points -= 1
-        return self.stack[self.points]
+        value = self.stack[self.points]
+        self.points += 1
+        return value
