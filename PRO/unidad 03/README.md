@@ -5,7 +5,7 @@
 </div>
 
 ## Contenido
-- [Listas](../unidad%2003/listas/README.md)
-- [Diccionarios](../unidad%2003/diccionarios/README.md)
-- [Conjuntos](../unidad%2003/conjuntos/README.md)
-- [Ficheros](../unidad%2003/ficheros/README.md)
+- [Listas](./listas/README.md)
+- [Diccionarios](./diccionarios/README.md)
+- [Conjuntos](./conjuntos/README.md)
+- [Ficheros](./ficheros/README.md)

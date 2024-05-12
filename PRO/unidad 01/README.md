@@ -5,5 +5,5 @@
 </div>
 
 ## Contenido
-- [Números](../unidad%2001/numeros/README.md)
-- [Cadenas de texto](../unidad%2001/cadenas%20de%20texto/README.md)
+- [Números](./numeros/README.md)
+- [Cadenas de texto](./cadenas%20de%20texto/README.md)

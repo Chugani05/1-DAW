@@ -5,6 +5,6 @@
 </div>
 
 ## Contenido
-- [Diagramas de casos de uso](../diagramas/diagramas/caso%20de%20uso/README.md)
-- [Diagramas de secuencia](../diagramas/diagramas/secuencia/README.md)
-- [Diagramas de actividades](../diagramas/diagramas/actividad/README.md)
+- [Diagramas de casos de uso](./diagramas/caso%20de%20uso/README.md)
+- [Diagramas de secuencia](./diagramas/secuencia/README.md)
+- [Diagramas de actividades](./diagramas/actividad/README.md)

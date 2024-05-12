@@ -5,5 +5,5 @@
 </div>
 
 ## Contenido
-- [Sink the float](../proyectos/Sink%20the%20float/README.md)
-- [Poker](../proyectos/Poker/README.md)
+- [Sink the float](./Sink%20the%20float/README.md)
+- [Poker](./Poker/README.md)

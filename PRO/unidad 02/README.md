@@ -5,5 +5,5 @@
 </div>
 
 ## Contenido
-- [Bucles](../unidad%2002/bucles/README.md)
-- [Condicionales](../unidad%2002/condicionales/README.md)
+- [Bucles](./bucles/README.md)
+- [Condicionales](./condicionales/README.md)
