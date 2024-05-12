@@ -22,14 +22,14 @@ class IntegerStack:
     def push(self, item: int) -> bool:
         '''Añade item a la pila.
         Si la pila está llena retornar False, en otro caso retornar True'''
-        if len(self.items) >= salf.max_size:
+        if len(self.items) >= self.max_size:
             return False
-        self.items.insert(0, item)
+        self.items.append(item)
         return True
 
     def pop(self) -> int:
         '''Extraer el elemento que está en el TOP de la pila'''
-        return self.items.pop(0)
+        return self.items.pop()
 
     def top(self) -> int:
         '''Devolver el elemento que está en el TOP de la pila (sin extracción)'''
@@ -63,12 +63,13 @@ class IntegerStack:
         - Si la pila se llena al ir añadiendo elementos habrá que expandir con los valores
         por defecto'''
         result = IntegerStack()
-        content = reversed(open(path).readlines())
-        for line in content:
-            num = int(line.strip())
-            if not result.push(num):
-                result.expand()
-                result.push(num)
+        with open(path) as f:
+            content = reversed(f.readlines())
+            for line in content:
+                num = int(line.strip())
+                if not result.push(num):
+                    result.expand()
+                    result.push(num)
         return result
 
     def __getitem__(self, index: int) -> int:
@@ -77,7 +78,7 @@ class IntegerStack:
 
     def __setitem__(self, index: int, item: int) -> None:
         '''Establece el valor de un elemento de la pila mediante el índice indicado'''
-        self.items[index] = item 
+        self.items[index] = item
 
     def __len__(self):
         '''Número de elementos que contiene la pila'''
@@ -86,7 +87,6 @@ class IntegerStack:
     def __str__(self):
         '''Cada elemento en una línea distinta empezando por el TOP de la pila'''
         return '\n'.join([str(n) for n in self.items])
-        
 
     def __add__(self, other: IntegerStack) -> IntegerStack:
         '''Sumar dos pilas.
@@ -105,11 +105,10 @@ class IntegerStack:
 class IntegerStackIterator:
     def __init__(self, stack: IntegerStack):
         self.stack = stack
-        self.points = 0
+        self.points = len(stack)
 
     def __next__(self) -> int:
-        if self.points >= len(self.stack):
+        if self.points <= 0:
             raise StopIteration
-        num = self.stack[self.points]
-        if self.points += 1
-        return num
+        self.points -= 1
+        return self.stack[self.points]

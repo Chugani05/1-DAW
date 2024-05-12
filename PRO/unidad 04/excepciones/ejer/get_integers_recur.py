@@ -1,7 +1,7 @@
-def getint():
+def getint() -> int:
     try:
-        user_input = input('Give me an integer number: ')
-        result = int(user_input)
+        user_value = input('Give me an integer number: ')
+        result = int(user_value)
     except ValueError:
         print('Not a valid integer. Try it again!')
         return getint()
