@@ -1,3 +1,6 @@
+import sys
+
+sys.path.insert(0, '../ejer')
 from file_inheritance import VideoFile
 
 

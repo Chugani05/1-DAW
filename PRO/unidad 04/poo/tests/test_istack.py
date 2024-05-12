@@ -1,6 +1,9 @@
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, '../ejer')
 from istack import IntegerStack, IntegerStackIterator
 
 

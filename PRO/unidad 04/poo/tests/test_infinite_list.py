@@ -1,4 +1,8 @@
+import sys
+
 import pytest
+
+sys.path.insert(0, '../ejer')
 from infinite_list import InfiniteList
 
 INFLIST1_VALUES = (10, 20, 30, 40, 50)

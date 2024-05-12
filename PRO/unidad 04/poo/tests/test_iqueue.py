@@ -1,6 +1,10 @@
 from pathlib import Path
 
+import sys
+
 import pytest
+
+sys.path.insert(0, '../ejer')
 from iqueue import IntegerQueue, IntegerQueueIterator
 
 
