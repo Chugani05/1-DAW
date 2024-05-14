@@ -12,49 +12,49 @@
                 padding: 0;
                 box-sizing: border-box;
             }
-            .calificaciones-desktop{
+            .calificaciones-escritorio {
                 width: fit-content;
                 margin-top: 5px;
                 background-color: rgb(172, 224, 172);
                 border: inset 10px gray;
             }
-            .calificaciones-mobile {
+            .calificaciones-movil {
                 margin-top: 5px;
                 background-color: rgb(172, 224, 172);
                 border: inset 3px gray;
                 display: none;
                 width: fit-content;
             }
-            .calificaciones-mobile .fila .columna {
+            .calificaciones-movil .fila .columna {
                 display: flex;
             }
-            .calificaciones-mobile .fila .columna .header, 
-            .calificaciones-mobile .fila .columna .contenido {
+            .calificaciones-movil .fila .columna .header, 
+            .calificaciones-movil .fila .columna .contenido {
                 border: 1px solid #909090;
                 border-bottom: none;
                 padding: 10px;
             }
-            .calificaciones-mobile .fila .columna .header {
+            .calificaciones-movil .fila .columna .header {
                 font-weight: bold;
-                width: 40%;
                 border-right: none;
+                width: 40%;
             }
-            .calificaciones-mobile .fila .columna .contenido {
-                width: 60%;
+            .calificaciones-movil .fila .columna .contenido {
                 border-left: none;
+                width: 60%;
             }
 
-            .calificaciones-mobile .fila:nth-of-type(odd) {
+            .calificaciones-movil .fila:nth-of-type(odd) {
                 background-color: rgb(197, 77, 77);
             }
             @media (max-width: 800px) {
-                .calificaciones-mobile {display: block;}
-                .calificaciones-desktop {display: none;}
+                .calificaciones-movil {display: block;}
+                .calificaciones-escritorio {display: none;}
             }
         </style>
     </head>
     <body>
-        <table border="1px" class="calificaciones-desktop">
+        <table border="1px" class="calificaciones-escritorio">
             <tr>
                 <th> Nombre</th> <th> Apellido1</th> <th> Apellido2 </th> <th> LND </th> <th> BAE </th> <th> PRO </th>
             </tr>
@@ -69,7 +69,7 @@
             </tr>
         </table>
         
-        <div class="calificaciones-mobile">
+        <div class="calificaciones-movil">
             <div class="fila">
                 <div class="columna">
                     <div class="header">Nombre:</div>
