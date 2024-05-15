@@ -117,31 +117,63 @@ select * from empleados;
 ### Ejercicio 3
 Inserta dos filas en la tabla empleados con nombres aleatorios generados usando la función RAND() junto con ORDER BY RAND().
 
-      ```sql
-      INSERT INTO empleados (nombre, salario)
-      SELECT CONCAT('Empleado', RAND()), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000
-      FROM (SELECT 1 UNION SELECT 2) AS sub
-      ORDER BY RAND()
-      LIMIT 2;
-      ```
+```sql
+DELIMITER //
+DROP PROCEDURE IF EXISTS insertar_nombre_aleatorio_orderbyrand;
+CREATE PROCEDURE insertar_nombre_aleatorio_orderbyrand(IN iterations INT, salario_base INT, salario_max INT)
+BEGIN
+    DECLARE counter INT DEFAULT 0;
 
+    WHILE counter < iterations DO
+        INSERT INTO empleados (nombre, salario)
+        SELECT CONCAT('Empleado', RAND()), FLOOR(RAND() * (salario_max - salario_base + 1)) + salario_base
+        FROM (SELECT 1 UNION SELECT 2) AS sub
+        ORDER BY RAND()
+        LIMIT 2;
+        SET counter = counter + 1;
+    END WHILE;
+END//
+
+DELIMITER ;
+```
+
+Realicemos la llamada al procedimiento:
+```sql
+call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+```
+
+Salida:
+```sql
+select * from empleados;
+
+```
 
 ### Ejercicio 4
 Inserta cuatro filas en la tabla empleados con nombres aleatorios generados usando la función SUBSTRING_INDEX(UUID(), '-', -1).
 
-    ```sql
+```sql
     INSERT INTO empleados (nombre, salario)
     VALUES (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
           (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
           (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
           (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000);
-    ```
+```
  
+ Realicemos la llamada al procedimiento:
+```sql
+call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+```
+
+Salida:
+```sql
+select * from empleados;
+
+```
 
 ### Ejercicio 5
 Inserta seis filas en la tabla empleados con nombres aleatorios generados usando la función RAND() y una semilla diferente.
 
-    ```sql
+```sql
     INSERT INTO empleados (nombre, salario)
     VALUES (CONCAT('Empleado', RAND(1)), FLOOR(RAND(1) * (10000 - 2000 + 1)) + 2000),
           (CONCAT('Empleado', RAND(2)), FLOOR(RAND(2) * (10000 - 2000 + 1)) + 2000),
@@ -149,4 +181,15 @@ Inserta seis filas en la tabla empleados con nombres aleatorios generados usando
           (CONCAT('Empleado', RAND(4)), FLOOR(RAND(4) * (10000 - 2000 + 1)) + 2000),
           (CONCAT('Empleado', RAND(5)), FLOOR(RAND(5) * (10000 - 2000 + 1)) + 2000),
           (CONCAT('Empleado', RAND(6)), FLOOR(RAND(6) * (10000 - 2000 + 1)) + 2000);
-    ```
+```
+
+Realicemos la llamada al procedimiento:
+```sql
+call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+```
+
+Salida:
+```sql
+select * from empleados;
+
+```
