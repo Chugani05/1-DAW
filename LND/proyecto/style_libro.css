@@ -1,4 +1,5 @@
-body {
+/* Common styles for both desktop and mobile */
+body, * {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -66,8 +67,14 @@ a:hover {
     color: #555;
 }
 
-table {
+.movil table-container {
+    overflow-x: auto;
+}
+
+.movil table {
     border-color: #333;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 img {
@@ -83,4 +90,21 @@ main section article {
 
 main section article div {
     margin-right: 25px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .movil {
+        display: block;
+    }
+    .escritorio {
+        display: none;
+    }   
+    aside {
+        width: 100%;
+        float: none;
+    }
+    img {
+        width: 100%;
+    }
 }
