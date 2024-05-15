@@ -1,45 +1,47 @@
 /* Styles for both desktop and mobile */
-body, * {
+.escritorio body, * {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
+/* Styles for desktop */
+.escritorio header {
     background-color: #333;
     color: #fff;
     padding: 20px;
 }
 
-header nav ul {
+.escritorio header nav ul {
     list-style-type: none;
 }
 
-header nav ul li {
+.escritorio header nav ul li {
     display: inline;
     margin-right: 20px;
+    text-align: center;
 }
 
-header nav ul li a {
+.escritorio header nav ul li a {
     color: #fff;
 }
 
-main {
+.escritorio main {
     padding: 20px;
 }
 
-section {
+.escritorio section {
     margin-bottom: 20px;
 }
 
-aside {
+.escritorio aside {
     float: right;
     width: 30%;
     background-color: #f4f4f4;
     padding: 20px;
 }
 
-footer {
+.escritorio footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -49,41 +51,41 @@ footer {
     width: 100%;
 }
 
-article {
+.escritorio article {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-h1, h2 {
+.escritorio h1, h2 {
     margin-bottom: 10px;
 }
 
-a {
+.escritorio a {
     color: #333;
 }
 
-a:hover {
+.escritorio a:hover {
     color: #555;
 }
 
-img {
+.escritorio img {
     width: 500px;
     height: 500px;
 }
 
-main section article {
+.escritorio main section article {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-main section article div {
+.escritorio main section article div {
     margin-right: 25px;
 }
 
 
-
+/* Styles for mobile */
 .movil header {
     background-color: #333;
     color: #fff;
@@ -128,7 +130,7 @@ main section article div {
 }
 
 /* Media query for mobile devices */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .movil {
         display: block;
     }

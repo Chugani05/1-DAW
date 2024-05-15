@@ -139,57 +139,135 @@ DELIMITER ;
 
 Realicemos la llamada al procedimiento:
 ```sql
-call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+call insertar_nombre_aleatorio_orderbyrand(1, 1500, 7500);
 ```
 
 Salida:
 ```sql
 select * from empleados;
-
++----+--------------------------------------+---------+
+| id | nombre                               | salario |
++----+--------------------------------------+---------+
+|  1 | Juan                                 | 3000.00 |
+|  2 | María                                | 3500.00 |
+|  3 | Pedro                                | 3200.00 |
+|  4 | Empleado0.5615586448102804           | 5419.00 |
+|  5 | Empleado0.7345302977920792           | 5106.00 |
+|  6 | Empleado0.9020481313597859           | 5234.00 |
+|  7 | Empleado0.5281420923100245           | 5501.00 |
+|  8 | Empleado0.9162668482551973           | 4405.00 |
+|  9 | 9b39f0a4-1209-11ef-9c10-080027f94d4c | 4285.00 |
+| 10 | 9b3d9624-1209-11ef-9c10-080027f94d4c | 6170.00 |
+| 11 | 9b401b96-1209-11ef-9c10-080027f94d4c | 6392.00 |
+| 12 | Empleado0.0771909207824533           | 6888.00 |
+| 13 | Empleado0.6140521593522766           | 4306.00 |
++----+--------------------------------------+---------+
 ```
 
 ### Ejercicio 4
 Inserta cuatro filas en la tabla empleados con nombres aleatorios generados usando la función SUBSTRING_INDEX(UUID(), '-', -1).
 
 ```sql
+DELIMITER //
+DROP PROCEDURE IF EXISTS insertar_nombre_aleatorio_substring;
+CREATE PROCEDURE insertar_nombre_aleatorio_substring(IN iterations INT, salario_base INT, salario_max INT)
+BEGIN
+    DECLARE counter INT DEFAULT 0;
+
+    WHILE counter < iterations DO
     INSERT INTO empleados (nombre, salario)
-    VALUES (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
-          (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
-          (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000),
-          (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (10000 - 2000 + 1)) + 2000);
+    VALUES (SUBSTRING_INDEX(UUID(), '-', -1), FLOOR(RAND() * (salario_max - salario_base + 1)) + salario_base);
+        SET counter = counter + 1;
+    END WHILE;
+END//
+
+DELIMITER ;
 ```
  
  Realicemos la llamada al procedimiento:
 ```sql
-call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+call insertar_nombre_aleatorio_substring(4, 1200, 6000);
 ```
 
 Salida:
 ```sql
 select * from empleados;
-
++----+--------------------------------------+---------+
+| id | nombre                               | salario |
++----+--------------------------------------+---------+
+|  1 | Juan                                 | 3000.00 |
+|  2 | María                                | 3500.00 |
+|  3 | Pedro                                | 3200.00 |
+|  4 | Empleado0.5615586448102804           | 5419.00 |
+|  5 | Empleado0.7345302977920792           | 5106.00 |
+|  6 | Empleado0.9020481313597859           | 5234.00 |
+|  7 | Empleado0.5281420923100245           | 5501.00 |
+|  8 | Empleado0.9162668482551973           | 4405.00 |
+|  9 | 9b39f0a4-1209-11ef-9c10-080027f94d4c | 4285.00 |
+| 10 | 9b3d9624-1209-11ef-9c10-080027f94d4c | 6170.00 |
+| 11 | 9b401b96-1209-11ef-9c10-080027f94d4c | 6392.00 |
+| 12 | Empleado0.0771909207824533           | 6888.00 |
+| 13 | Empleado0.6140521593522766           | 4306.00 |
+| 14 | 080027f94d4c                         | 2438.00 |
+| 15 | 080027f94d4c                         | 4060.00 |
+| 16 | 080027f94d4c                         | 2187.00 |
+| 17 | 080027f94d4c                         | 2354.00 |
++----+--------------------------------------+---------+
 ```
 
 ### Ejercicio 5
 Inserta seis filas en la tabla empleados con nombres aleatorios generados usando la función RAND() y una semilla diferente.
 
 ```sql
+DELIMITER //
+DROP PROCEDURE IF EXISTS insertar_nombre_aleatorio_semilla;
+CREATE PROCEDURE insertar_nombre_aleatorio_semilla(IN iterations INT, salario_base INT, salario_max INT)
+BEGIN
+    DECLARE counter INT DEFAULT 0;
+
+    WHILE counter < iterations DO
     INSERT INTO empleados (nombre, salario)
-    VALUES (CONCAT('Empleado', RAND(1)), FLOOR(RAND(1) * (10000 - 2000 + 1)) + 2000),
-          (CONCAT('Empleado', RAND(2)), FLOOR(RAND(2) * (10000 - 2000 + 1)) + 2000),
-          (CONCAT('Empleado', RAND(3)), FLOOR(RAND(3) * (10000 - 2000 + 1)) + 2000),
-          (CONCAT('Empleado', RAND(4)), FLOOR(RAND(4) * (10000 - 2000 + 1)) + 2000),
-          (CONCAT('Empleado', RAND(5)), FLOOR(RAND(5) * (10000 - 2000 + 1)) + 2000),
-          (CONCAT('Empleado', RAND(6)), FLOOR(RAND(6) * (10000 - 2000 + 1)) + 2000);
+    VALUES (CONCAT('Empleado', RAND(counter + 1)), FLOOR(RAND(counter + 1) * (salario_max - salario_base + 1)) + salario_base);
+    SET counter = counter + 1;
+    END WHILE;
+END//
+
+DELIMITER ;
 ```
 
 Realicemos la llamada al procedimiento:
 ```sql
-call insertar_nombre_aleatorio_orderbyrand(2, 1500, 7500);
+call insertar_nombre_aleatorio_semilla(6, 3500, 8500);
 ```
 
 Salida:
 ```sql
 select * from empleados;
-
++----+--------------------------------------+---------+
+| id | nombre                               | salario |
++----+--------------------------------------+---------+
+|  1 | Juan                                 | 3000.00 |
+|  2 | María                                | 3500.00 |
+|  3 | Pedro                                | 3200.00 |
+|  4 | Empleado0.5615586448102804           | 5419.00 |
+|  5 | Empleado0.7345302977920792           | 5106.00 |
+|  6 | Empleado0.9020481313597859           | 5234.00 |
+|  7 | Empleado0.5281420923100245           | 5501.00 |
+|  8 | Empleado0.9162668482551973           | 4405.00 |
+|  9 | 9b39f0a4-1209-11ef-9c10-080027f94d4c | 4285.00 |
+| 10 | 9b3d9624-1209-11ef-9c10-080027f94d4c | 6170.00 |
+| 11 | 9b401b96-1209-11ef-9c10-080027f94d4c | 6392.00 |
+| 12 | Empleado0.0771909207824533           | 6888.00 |
+| 13 | Empleado0.6140521593522766           | 4306.00 |
+| 14 | 080027f94d4c                         | 2438.00 |
+| 15 | 080027f94d4c                         | 4060.00 |
+| 16 | 080027f94d4c                         | 2187.00 |
+| 17 | 080027f94d4c                         | 2354.00 |
+| 18 | Empleado0.40540353712197724          | 5527.00 |
+| 19 | Empleado0.6555866465490187           | 6778.00 |
+| 20 | Empleado0.9057697559760601           | 8029.00 |
+| 21 | Empleado0.15595286540310166          | 4279.00 |
+| 22 | Empleado0.40613597483014313          | 5531.00 |
+| 23 | Empleado0.6563190842571847           | 6782.00 |
++----+--------------------------------------+---------+
 ```
