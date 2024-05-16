@@ -1,0 +1,68 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+header nav ul {
+    padding: 0;
+}
+
+header nav ul li {
+    display: block;
+    margin: 5px 0;
+}
+
+header nav ul li a {
+    color: #fff;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #555;
+}
+
+main {
+    padding: 10px;
+}
+
+aside {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+main section article {
+    display: block;
+}
+
+main section article div {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: static;
+    padding: 10px;
+}
+
+article {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
