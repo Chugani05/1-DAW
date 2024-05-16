@@ -131,9 +131,120 @@ La línea 2 define el constructor `__init__`, que toma un parámetro `name` y lo
 
 ## Atributos
 ### Acceso directo
+Aunque se cree un atributo en el constructor de la clase, este se puede modificar desde "fuera" con un acceso directo:
+
+```python
+class Droid:
+    def __init__(self, name: str):
+        self.name = name
+
+droid = Droid('C-3PO')
+
+droid.name # Output: 'C-3PO'
+
+# Aquí estamos accediendo al atributo `name` para modificarla
+droid.name = 'waka-waka'
+```
+
+También se pueden añadir atributos después de su creación:
+
+```python
+droid.manufacturer = 'Cybot Galactica'
+droid.height = 1.77
+```
+
 ### Propiedades
+Las propiedades permiten definir métodos para acceder (get) y modificar (set) los atributos de una clase, manteniendo así un control más estricto sobre cómo se accede y se cambia el estado de los objetos.
+
+Los decoradores en Python proporcionan una forma elegante y concisa de aplicar propiedades. Los dos decoradores más comúnmente utilizados para este propósito son **`@property`** y **`@name.setter`**. A continuación se explica cómo se utilizan:
+
+El **decorador `@property`** se utiliza para definir un método que actúa como un getter. Es decir, se usa para leer el valor de un atributo. Este método se define como si fuera un atributo regular, pero proporciona una interfaz controlada para acceder al valor.
+
+```python
+class Persona:
+    def __init__(self, nombre):
+        self._nombre = nombre
+
+    @property
+    def nombre(self):
+        return self._nombre
+```
+
+En este ejemplo, `nombre` es un método que actúa como un getter para el atributo `_nombre`. Cuando se accede a `persona.nombre`, se llama al método `nombre`.
+
+El **decorador `@name.setter`** se utiliza para definir un método que actúa como un setter. Es decir, se usa para escribir o modificar el valor de un atributo.
+
+```python
+class Persona:
+    def __init__(self, nombre):
+        self._nombre = nombre
+
+    @property
+    def nombre(self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre(self, valor):
+        if isinstance(valor, str) and valor:
+            self._nombre = valor
+        else:
+            raise ValueError("El nombre debe ser una cadena no vacía")
+```
+
+Aquí, se ha definido un setter para el atributo `nombre`. Este setter asegura que solo se puedan asignar valores que sean cadenas no vacías al atributo `_nombre`.
+
+Aún así, podemos seguir accediendo a los atributos directamente, incluso cambiar su valor.
+
 #### Valores calculados
+Las propiedades no solo se utilizan para acceder y modificar atributos, sino que también pueden emplearse para devolver valores calculados. Esto es útil cuando el valor que se desea obtener depende de otros atributos o requiere algún tipo de procesamiento.
+
+Imagina que tienes una clase `Rectangulo` con atributos `ancho` y `alto`, y quieres que la clase también tenga una propiedad `area` que devuelva el área del rectángulo, la cual se calcula multiplicando el ancho por el alto.
+
+```python
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    @property
+    def area(self):
+        return self.ancho * self.alto
+
+    @property
+    def perimetro(self):
+        return 2 * (self.ancho + self.alto)
+```
+
+> [!IMPORTANT]
+> Las propiedades no pueden recibir parámetros.
+
 #### Cacheando propiedades
+El almacenamiento en caché de propiedades en Python puede mejorar el rendimiento al evitar cálculos repetitivos de valores que no cambian con frecuencia.
+
+Este método implica utilizar un atributo privado para almacenar el valor calculado y un decorador para manejar el caché.
+
+```python
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        self._area = None  # Atributo privado para cachear el valor
+
+    @property
+    def area(self):
+        if self._area is None:  # Calcula solo si no está cacheado
+            self._area = self.ancho * self.alto
+        return self._area
+
+    def reset_cache(self):
+        self._area = None  # Resetea el caché
+
+    def set_dimensions(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        self.reset_cache()  # Resetea el caché cuando cambian las dimensiones
+```
+
 ### Ocultando atributos
 ### Atributos de clase
 ## Métodos
