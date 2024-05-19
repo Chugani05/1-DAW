@@ -1,4 +1,4 @@
-# Tarea 3
+# Tarea 4
 ## Trabajo con cursores
 
 La base de datos de __"empleados"__ es un sistema diseñado para gestionar información relacionada con los empleados de una empresa. Esta base de datos está estructurada en torno a la entidad principal "empleados", que contiene información detallada sobre cada empleado. La estructura de la base de datos se compone de una única tabla principal llamada "empleados".

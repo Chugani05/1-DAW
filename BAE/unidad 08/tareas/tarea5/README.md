@@ -1,4 +1,4 @@
-# Tarea 5
+# Tarea 6
 ## Trabajo con procedimientos de generación de información
 
 Dado el procedimiento base:
