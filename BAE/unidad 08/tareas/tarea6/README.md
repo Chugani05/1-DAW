@@ -102,63 +102,135 @@ CREATE TABLE persona (
     ``` 
 
     ```sql
-    -- Realizamos la llamada a la función:
-    call subsidio_transporte(47ad19b2, 7);
+    -- Comprobamos que la función funcione mediante:
+    select subsidio_transporte('47ad19b2', 7);
 
     -- Salida:
-
+    +------------------------------------+
+    | subsidio_transporte('47ad19b2', 7) |
+    +------------------------------------+
+    |                             261.08 |
+    +------------------------------------+
     ```
 
     - Función __salud__: La salud que corresponde al __4%__ al salario básico.  _Actualiza el valor en la tabla_.
     ```sql
+    DELIMITER //
+    DROP FUNCTION IF EXISTS salud;
+    CREATE FUNCTION salud(id_persona VARCHAR(100), porcentaje INT) RETURNS DECIMAL(10, 2) DETERMINISTIC
+    BEGIN
+        DECLARE salud_actual DECIMAL(10, 2);
+        DECLARE salud_nuevo DECIMAL(10, 2);
 
+        SELECT salud INTO salud_actual FROM persona WHERE id = id_persona;
+        SET salud_nuevo = salud_actual + (salud_actual * (porcentaje / 100));
+        UPDATE persona SET salud = salud_nuevo WHERE id = id_persona;
+        RETURN salud_nuevo;
+    END //
+    DELIMITER ;
     ``` 
 
     ```sql
-    -- Realizamos la llamada a la función:
-    call salud(47ad19b2, 4);
-
+    -- Comprobamos que la función funcione mediante:
+    select salud('47ad19b2', 4);
+    
     -- Salida:
-
+    +----------------------+
+    | salud('47ad19b2', 4) |
+    +----------------------+
+    |                28.08 |
+    +----------------------+
     ```
 
     - Función __pension__: La pensión que corresponde al __4%__ al salario básico.  _Actualiza el valor en la tabla_.
     ```sql
-    
+    DELIMITER //
+    DROP FUNCTION IF EXISTS pension;
+    CREATE FUNCTION pension(id_persona VARCHAR(100), porcentaje INT) RETURNS DECIMAL(10, 2) DETERMINISTIC
+    BEGIN
+        DECLARE pension_actual DECIMAL(10, 2);
+        DECLARE pension_nuevo DECIMAL(10, 2);
+
+        SELECT pension INTO pension_actual FROM persona WHERE id = id_persona;
+        SET pension_nuevo = pension_actual + (pension_actual * (porcentaje / 100));
+        UPDATE persona SET pension = pension_nuevo WHERE id = id_persona;
+        RETURN pension_nuevo;
+    END //
+    DELIMITER ;
     ``` 
 
     ```sql
-    -- Realizamos la llamada a la función:
-    call pension(47ad19b2, 4);
+    -- Comprobamos que la función funcione mediante:
+    select pension('47ad19b2', 4);
 
     -- Salida:
-
+    +------------------------+
+    | pension('47ad19b2', 4) |
+    +------------------------+
+    |                1647.36 |
+    +------------------------+
     ```
 
     - Función __bono__: Un bono que corresponde al __8%__ al salario básico. _Actualiza el valor en la tabla_. 
     ```sql
-    
+    DELIMITER //
+    DROP FUNCTION IF EXISTS bono;
+    CREATE FUNCTION bono(id_persona VARCHAR(100), porcentaje INT) RETURNS DECIMAL(10, 2) DETERMINISTIC
+    BEGIN
+        DECLARE bono_actual DECIMAL(10, 2);
+        DECLARE bono_nuevo DECIMAL(10, 2);
+
+        SELECT bono INTO bono_actual FROM persona WHERE id = id_persona;
+        SET bono_nuevo = bono_actual + (bono_actual * (porcentaje / 100));
+        UPDATE persona SET bono = bono_nuevo WHERE id = id_persona;
+        RETURN bono_nuevo;
+    END //
+    DELIMITER ;
     ``` 
 
     ```sql
-    -- Realizamos la llamada a la función:
-    call bono(47ad19b2, 8);
+    -- Comprobamos que la función funcione mediante:
+    select bono('47ad19b2', 8);
 
     -- Salida:
-
+    +---------------------+
+    | bono('47ad19b2', 8) |
+    +---------------------+
+    |              133.92 |
+    +---------------------+
     ```
 
     - Función __integral__: El salario integral es la ___suma del salario básico - salud - pension + bono + sub de transporte___. _Actualiza el valor en la tabla_.
     ```sql
+    DELIMITER //
+    DROP FUNCTION IF EXISTS integral;
+    CREATE FUNCTION integral(id_persona VARCHAR(100)) RETURNS DECIMAL(10, 2) DETERMINISTIC
+    BEGIN
+        DECLARE psalario DECIMAL(10, 2);
+        DECLARE psubsidio DECIMAL(10, 2);
+        DECLARE psalud DECIMAL(10, 2);
+        DECLARE ppension DECIMAL(10, 2);
+        DECLARE pbono DECIMAL(10, 2);
+        DECLARE integral_nuevo DECIMAL(10, 2);
     
+        SELECT salario_base, subsidio, salud, pension, bono INTO psalario, psubsidio, psalud, ppension, pbono FROM persona WHERE id = id_persona;
+        SET integral_nuevo = psalario - psalud - ppension + psubsidio + pbono;
+        UPDATE persona SET integral = integral_nuevo WHERE id = id_persona;
+        RETURN integral_nuevo;
+    END //
+    DELIMITER ;
     ``` 
 
     ```sql
-    -- Realizamos la llamada a la función:
-    call integral(47ad19b2, );
+    -- Comprobamos que la función funcione mediante:
+    select integral('47ad19b2');
 
     -- Salida:
-
+    +----------------------+
+    | integral('47ad19b2') |
+    +----------------------+
+    |              4095.56 |
+    +----------------------+
     ``` 
 
 ___Crea cada uno de las funciones anteriores para una persona en específico___.

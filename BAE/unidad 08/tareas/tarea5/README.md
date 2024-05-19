@@ -25,8 +25,7 @@ DELIMITER ;
 CALL my_loop(5);
 ```
 
-Y las funciones descritas en [aleatoriedad](../../aleatoriedad.md), realiza los siguientes procedimientos, que realicen las siguietes operaciones:
-
+## Realiza los siguientes procedimientos, que realicen las siguietes operaciones:
 ### Ejercicio 1
 Inserta cinco filas en la tabla empleados con nombres aleatorios generados usando la función CONCAT() junto con RAND().
 ```sql
