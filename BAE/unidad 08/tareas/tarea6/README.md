@@ -55,7 +55,7 @@ CREATE TABLE persona (
 
         WHILE counter <  iterations DO
             INSERT INTO persona (id, nombre, salario_base, subsidio, salud, pension, bono, integral)
-            VALUES (SUBSTRING_INDEX(UUID(), '-', 1), CONCAT(nombre, FLOOR(RAND() * (100 - 1 + 1)) ), FLOOR(RAND() * (salario_max - salario_min + 1)), FLOOR(RAND() * (subsidio_max - subsidio_base + 1)), FLOOR(RAND() * (salud_max - salud_base + 1)), FLOOR(RAND() * (pension_max - pension_base + 1)), FLOOR(RAND() * (bono_max - bono_base + 1)), FLOOR(RAND() * (integral_max - integral_base + 1)));
+            VALUES (SUBSTRING_INDEX(UUID(), '-', 1), CONCAT(nombre, FLOOR(RAND() * (100 - 1 + 1))), FLOOR(RAND() * (salario_max - salario_min + 1)), FLOOR(RAND() * (subsidio_max - subsidio_base + 1)), FLOOR(RAND() * (salud_max - salud_base + 1)), FLOOR(RAND() * (pension_max - pension_base + 1)), FLOOR(RAND() * (bono_max - bono_base + 1)), FLOOR(RAND() * (integral_max - integral_base + 1)));
             SET counter = counter + 1;
         END WHILE;
     END //
@@ -70,16 +70,16 @@ CREATE TABLE persona (
     +----------+--------+--------------+----------+--------+---------+--------+----------+
     | id       | nombre | salario_base | subsidio | salud  | pension | bono   | integral |
     +----------+--------+--------------+----------+--------+---------+--------+----------+
-    | 47a5df21 | user99 |      3424.00 |    50.00 | 336.00 |  588.00 | 119.00 |     2.00 |
-    | 47aaafd4 | user98 |      5671.00 |   177.00 | 495.00 |  708.00 |  44.00 |    16.00 |
-    | 47ad19b2 | user18 |      5376.00 |   244.00 |  27.00 | 1584.00 | 124.00 |    30.00 |
-    | 47afd7bf | user20 |      6742.00 |   175.00 | 237.00 |  442.00 | 138.00 |    38.00 |
-    | 47b21eb0 | user92 |      6556.00 |    95.00 |  80.00 | 1435.00 |  27.00 |    31.00 |
-    | 47b3c962 | user26 |       228.00 |   106.00 | 409.00 |  699.00 | 105.00 |    18.00 |
-    | 47b5afcc | user19 |      4793.00 |   122.00 | 145.00 | 1969.00 |  29.00 |     1.00 |
-    | 47b73961 | user58 |      6473.00 |    89.00 |  33.00 |  774.00 | 116.00 |    27.00 |
-    | 47b8c59b | user10 |      3665.00 |   297.00 | 345.00 | 1809.00 | 120.00 |    11.00 |
-    | 47ba33bc | user98 |       685.00 |   145.00 |  91.00 |  636.00 |  19.00 |    28.00 |
+    | 7a778dda | user32 |      6560.00 |    40.00 | 129.00 | 1343.00 | 107.00 |    22.00 |
+    | 7a7cb65c | user57 |      2001.00 |   158.00 | 527.00 | 1627.00 |  65.00 |    29.00 |
+    | 7a7f2464 | user31 |      3195.00 |    17.00 |  53.00 |  551.00 |  16.00 |    29.00 |
+    | 7a822714 | user28 |      1993.00 |   119.00 | 138.00 | 1929.00 |  19.00 |    31.00 |
+    | 7a8426b7 | user42 |      6611.00 |   259.00 | 498.00 | 1126.00 |  49.00 |    38.00 |
+    | 7a85cd5b | user72 |      6273.00 |   228.00 | 266.00 | 1873.00 |  53.00 |    39.00 |
+    | 7a87a00e | user73 |      6265.00 |   216.00 | 151.00 |  204.00 | 113.00 |    18.00 |
+    | 7a89975b | user4  |      6586.00 |   299.00 | 299.00 | 1023.00 |   9.00 |    31.00 |
+    | 7a8b7a70 | user71 |      1758.00 |   289.00 |  91.00 | 1750.00 | 138.00 |    39.00 |
+    | 7a8d0925 | user6  |      3616.00 |    15.00 | 545.00 |  755.00 |  25.00 |    28.00 |
     +----------+--------+--------------+----------+--------+---------+--------+----------+
     ``` 
 
@@ -95,7 +95,6 @@ CREATE TABLE persona (
 
         SELECT subsidio INTO subsidio_actual FROM persona WHERE id = id_persona;
         SET subsidio_nuevo = subsidio_actual + (subsidio_actual * (porcentaje / 100));
-        UPDATE persona SET subsidio = subsidio_nuevo WHERE id = id_persona;
         RETURN subsidio_nuevo;
     END //
     DELIMITER ;
@@ -103,15 +102,53 @@ CREATE TABLE persona (
 
     ```sql
     -- Comprobamos que la función funcione mediante:
-    select subsidio_transporte('47ad19b2', 7);
+    select subsidio_transporte('7a7cb65c', 7);
 
     -- Salida:
     +------------------------------------+
-    | subsidio_transporte('47ad19b2', 7) |
+    | subsidio_transporte('7a7cb65c', 7) |
     +------------------------------------+
-    |                             261.08 |
+    |                             169.06 |
     +------------------------------------+
     ```
+
+    ```sql
+    DELIMITER //
+    DROP PROCEDURE IF EXISTS actualizar_subsidio;
+    CREATE PROCEDURE actualizar_subsidio(id_persona VARCHAR(100), porcentaje INT)
+    BEGIN
+        DECLARE subsidio_actual DECIMAL(10, 2);
+        DECLARE subsidio_nuevo DECIMAL(10, 2);
+
+        SELECT subsidio INTO subsidio_actual FROM persona WHERE id = id_persona;
+        SET subsidio_nuevo = subsidio_transporte(id_persona, porcentaje);
+        UPDATE persona SET subsidio = subsidio_nuevo WHERE id = id_persona;
+    END //
+    DELIMITER ;
+    ```
+        
+    ```sql
+    -- Realicemos la llamada al procedimiento:
+    call actualizar_subsidio('7a7cb65c', 7);
+
+    -- Salida: 
+    select * from persona;
+    +----------+--------+--------------+----------+--------+---------+--------+----------+
+    | id       | nombre | salario_base | subsidio | salud  | pension | bono   | integral |
+    +----------+--------+--------------+----------+--------+---------+--------+----------+
+    | 7a778dda | user32 |      6560.00 |    40.00 | 129.00 | 1343.00 | 107.00 |    22.00 |
+    | 7a7cb65c | user57 |      2001.00 |   169.06 | 527.00 | 1627.00 |  65.00 |    29.00 |
+    | 7a7f2464 | user31 |      3195.00 |    17.00 |  53.00 |  551.00 |  16.00 |    29.00 |
+    | 7a822714 | user28 |      1993.00 |   119.00 | 138.00 | 1929.00 |  19.00 |    31.00 |
+    | 7a8426b7 | user42 |      6611.00 |   259.00 | 498.00 | 1126.00 |  49.00 |    38.00 |
+    | 7a85cd5b | user72 |      6273.00 |   228.00 | 266.00 | 1873.00 |  53.00 |    39.00 |
+    | 7a87a00e | user73 |      6265.00 |   216.00 | 151.00 |  204.00 | 113.00 |    18.00 |
+    | 7a89975b | user4  |      6586.00 |   299.00 | 299.00 | 1023.00 |   9.00 |    31.00 |
+    | 7a8b7a70 | user71 |      1758.00 |   289.00 |  91.00 | 1750.00 | 138.00 |    39.00 |
+    | 7a8d0925 | user6  |      3616.00 |    15.00 | 545.00 |  755.00 |  25.00 |    28.00 |
+    +----------+--------+--------------+----------+--------+---------+--------+----------+
+    ```
+    
 
     - Función __salud__: La salud que corresponde al __4%__ al salario básico.  _Actualiza el valor en la tabla_.
     ```sql
