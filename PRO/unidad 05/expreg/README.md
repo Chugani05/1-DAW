@@ -1,4 +1,4 @@
-# XML
+# re (expresiones regulares)
 
 <div align=center>
 <img src="../../../extras/winter.gif" alt="me" width="60%">

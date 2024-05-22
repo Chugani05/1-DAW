@@ -1,4 +1,9 @@
 # Unidad 5 - Bases de datos relacionales (SQLITE)
+
+<div align=center>
+<img src="../../extras/winter.gif" alt="me" width="60%">
+</div>
+
 ## Para crear una base de datos
 ```sql
 sqlite3 tarea.db

@@ -1,4 +1,9 @@
 # Unidad 8 - Programación en base de datos
+
+<div align=center>
+<img src="../../extras/winter.gif" alt="me" width="60%">
+</div>
+
 ## Índice
 
 - [Introducción](#introducción)

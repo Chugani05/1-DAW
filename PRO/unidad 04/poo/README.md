@@ -1,5 +1,9 @@
 # Objetos y clases
 
+<div align=center>
+<img src="../../../extras/winter.gif" alt="me" width="60%">
+</div>
+
 ## Índice
 - [Programación orientada a objetos](#programación-orientada-a-objetos)
 - [Creando objetos](creando-objetos)

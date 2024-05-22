@@ -1,7 +1,7 @@
 # Diagramas
 
 <div align=center>
-<img src="../../extras/pixel-jeff-matrix-s.gif" alt="me" width="60%">
+<img src="../../../extras/winter.gif" alt="me" width="60%">
 </div>
 
 ## Contenido
