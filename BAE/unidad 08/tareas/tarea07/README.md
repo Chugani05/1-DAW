@@ -21,7 +21,7 @@ USE test;
 DROP TABLE IF EXISTS alumno;
 CREATE TABLE alumno (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100),
+    nombre VARCHAR(50),
     apellido1 VARCHAR(50),
     apellido2 VARCHAR(50),
     nota FLOAT
