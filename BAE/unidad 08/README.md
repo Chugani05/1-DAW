@@ -1,4 +1,4 @@
-# Unidad 8 - Programación en base de datos (Procedimientos)
+# Unidad 8 - Programación en base de datos
 ## Índice
 
 - [Introducción](#introducción)
