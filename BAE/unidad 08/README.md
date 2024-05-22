@@ -137,17 +137,20 @@ DROP FUNCTION IF EXISTS function_name;
 - __Llamada a funciones__:
 ```sql
 -- Primera forma:
+-- Llamamos la función de forma directa mediante un select que nos lo muestra en pantalla.
 SELECT function_name(parametros);
 
 -- Segunda forma:
+-- Llama a una funcion dentro de otra función. Se puede hacer en un función, en un procedimiento o trigger.
 DELIMITER //
 CREATE FUNCTION function_name(parameter_name parameter_type,...)
 RETURNS result_type CARACTERISTICA
 BEGIN
-    -- Instrucciones SQL
-    -- ...
-    -- ...
-    -- ...
+    DECLARE salario_base DECIMAL(10, 2)
+    DECLARE salario DECIMAL(10, 2);
+    
+    SET salario_base = 1000;
+    SET salario = salario_total(salario_base);
     RETURN result
 END //
 DELIMTER ;
