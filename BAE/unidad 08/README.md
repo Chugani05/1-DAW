@@ -71,7 +71,7 @@ END LOOP [etiqueta_fin]
 
 ## Procedimientos
 
-Un procedimiento almacenado es un __conjunto de instrucciones SQL__ que se almacena asociado a una base de datos. Es un objeto que se crea con la sentencia CREATE PROCEDURE y se invoca con la sentencia __CALL__. Un procedimiento puede tener ___cero o muchos parámetros de entrada__ y __cero o muchos parámetros de salida__.
+Un procedimiento almacenado es un __conjunto de instrucciones SQL__ que se almacena asociado a una base de datos. Es un objeto que se crea con la sentencia CREATE PROCEDURE y se invoca con la sentencia __CALL__. Un procedimiento puede tener __cero o muchos parámetros de entrada__ y __cero o muchos parámetros de salida__.
 
 - __Creación de procedimientos:__
 ```sql
@@ -95,7 +95,7 @@ CALL procedure_name(parametros)
 
 ## Funciones
 
-Las funciones son similares a los procedimientos pero con la principal diferencia de que __siempre devuelven un resultado__. Estos se llaman tanto en el SELECT como en cualquier otro cuerpo de instrucciones SQL (como dentro de otras funciones, en procedimientos, triggers...). ¿Cómo se usa esta mondá? Mira acá mi parcero:
+Las funciones son similares a los procedimientos pero con la principal diferencia de que __siempre devuelven un resultado__. Estos se llaman tanto en el SELECT como en cualquier otro cuerpo de instrucciones SQL (como dentro de otras funciones, en procedimientos, triggers...).
 
 - __Creación de una función__:
 ```sql
