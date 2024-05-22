@@ -70,6 +70,8 @@ DELIMITER ;
     - cadena (cadena de caracteres)
   - Salida:
     - (cadena de caracteres)
+   
+> ___La función crear_email deberá hacer uso de la función eliminar_acentos___.
 
 ```sql
 DROP FUNCTION IF EXISTS eliminar_acentos;
@@ -87,8 +89,6 @@ BEGIN
 END //
 DELIMITER ;
 ```
-
-> ___La función crear_email deberá hacer uso de la función eliminar_acentos___.
 
 ### Una vez creada la tabla escriba un trigger con las siguientes características:
 - Trigger:
