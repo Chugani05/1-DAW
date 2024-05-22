@@ -163,7 +163,7 @@ DELIMTER ;
 
 ## Diferencias entre procedimientos y funciones
 
-Como sé que el Joatham le excita hacer esta pregunta, dejo aquí las diferencias principales que hay entre los procedimientos y las funciones:
+Las diferencias principales que hay entre los procedimientos y las funciones:
 
 - Un procedimiento __no nos regresa un valor__. En su lugar es llamado con una declaración __CALL__ para realizar una operación como __modificar una tabla__ o __procesar la recuperación de registros.__
 -  Una función es llamada __dentro de una expresión y nos regresa un valor único__ directamente al que lo llama para ser utilizado en la expresión. 
@@ -171,8 +171,7 @@ Como sé que el Joatham le excita hacer esta pregunta, dejo aquí las diferencia
 
 ## Cursores
 
-Un cursor es, según mis palabras, un cosito que se encarga de recorrer las filas de una tabla para ir cogiendo información de la fila donde se encuentre y enviartela para que tú hagas con ella lo que se te de la gana.
-En palabras de Joatham:
+Un cursor es, según mis palabras, un indicador que se encarga de recorrer las filas de una tabla para ir cogiendo información de la fila donde se encuentre y enviartela para que tú hagas con ella lo que necesites.
 
 > [!IMPORTANT]
 > En base de datos un Cursor es un mecanismo el cual nos permite procesar fila por fila el resultado de una consulta.
