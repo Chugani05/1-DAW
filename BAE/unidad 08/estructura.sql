@@ -20,6 +20,21 @@ BEGIN
     END IF;
 END;//
 
+-- ejemplo trigger
+DROP TRIGGER IF EXISTS check_nota_before_update;
+DELIMITER $$
+CREATE TRIGGER check_nota_before_update
+BEFORE UPDATE ON alumno
+FOR EACH ROW
+BEGIN
+    IF NEW.nota < 0 THEN
+        SET NEW.nota = 0;
+    ELSEIF NEW.nota > 10 THEN
+        SET NEW.nota = 10;
+    END IF;
+END;$$
+DELIMITER ;
+
 --procedimiento
 CREATE PROCEDURE insertar_alumnos_10(IN iterations INT)
 BEGIN
@@ -44,9 +59,6 @@ BEGIN
     END WHILE;
 END //
 
---otro ej alietoriedad
-SELECT SUBSTRING_INDEX(UUID(), '-', 1);
--- Ejemplo de salida: 426614174000
 
 --funcion
 CREATE FUNCTION crear_email (nombre VARCHAR(30), apellido1 VARCHAR(30), apellido2 VARCHAR(30), dominio VARCHAR(30))
@@ -66,6 +78,22 @@ BEGIN
 
     RETURN eliminar_acentos(email);
 END//
+DELIMITER ;
+
+-- ejemplo función
+DROP FUNCTION IF EXISTS eliminar_acentos;
+DELIMITER //
+CREATE FUNCTION eliminar_acentos(cadena VARCHAR(100)) RETURNS VARCHAR(100) DETERMINISTIC
+BEGIN
+  DECLARE nueva_cadena VARCHAR(100);
+
+  SET nueva_cadena = REPLACE(cadena, 'á', 'a');
+  SET nueva_cadena = REPLACE(nueva_cadena, 'é', 'e');
+  SET nueva_cadena = REPLACE(nueva_cadena, 'í', 'i');
+  SET nueva_cadena = REPLACE(nueva_cadena, 'ó', 'o');
+  SET nueva_cadena = REPLACE(nueva_cadena, 'ú', 'u');
+  RETURN nueva_cadena;
+END //
 DELIMITER ;
 
 --cursor
@@ -107,3 +135,7 @@ BEGIN
     END WHILE;
 END //
 DELIMITER ;
+
+--otro ej alietoriedad
+SELECT SUBSTRING_INDEX(UUID(), '-', 1);
+-- Ejemplo de salida: 426614174000
