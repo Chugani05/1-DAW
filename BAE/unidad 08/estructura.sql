@@ -2,11 +2,10 @@
 DROP TABLE IF EXISTS log_cambios_email;
 CREATE TABLE log_cambios_email(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_alumno INT,
+    id_alumno INT REFERENCES alumnos(id),
     fecha_hora DATETIME,
     old_email VARCHAR(100),
     new_email VARCHAR(100),
-    FOREIGN KEY (id_alumno) REFERENCES alumnos(id)
 );
 
 
