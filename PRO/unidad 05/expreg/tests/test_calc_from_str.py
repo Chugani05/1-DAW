@@ -3,7 +3,7 @@ import sys
 import pytest
 
 sys.path.insert(0, '../ejer')
-from calc1 import calc
+from calc_from_str import calc
 
 TESTDATA = (
     ('3+2', 5),
