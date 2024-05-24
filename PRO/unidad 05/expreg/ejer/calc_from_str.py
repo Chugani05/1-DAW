@@ -18,4 +18,6 @@ def calc(expression: str) -> int | float:
             result = operand1 * operand2
         case '/':
             result = operand1 / operand2
+        case _:
+            result = 0
     return result
