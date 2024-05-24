@@ -18,7 +18,7 @@ Trigger: __trigger_guardar_email_after_update__:
     DROP TABLE IF EXISTS log_cambios_email;
     CREATE TABLE log_cambios_email (
         id INT PRIMARY KEY AUTO_INCREMENT,
-        id_alumno INT,
+        id_alumno INT REFERENCES alumnos(id),
         fecha_hora DATETIME,
         old_email VARCHAR(50),
         new_email VARCHAR(50)
@@ -79,7 +79,7 @@ SELECT * FROM log_cambios_email;
     DROP TABLE IF EXISTS log_alumnos_eliminados;
     CREATE TABLE log_alumnos_eliminados (
         id INT PRIMARY KEY AUTO_INCREMENT,
-        id_alumno INT,
+        id_alumno INT REFERENCES alumnos(id),
         fecha_hora VARCHAR(50),
         nombre VARCHAR(50),
         apellido1 VARCHAR(50),
@@ -95,10 +95,21 @@ CREATE TRIGGER guardar_alumnos_eliminados
 AFTER DELETE ON alumno
 FOR EACH ROW
 BEGIN
-  IF 
-    DELETE 
-    INSERT INTO log_alumnos_eliminados WHERE id = id_persona;
-  END IF;
+  INSERT INTO log_alumnos_eliminados(id_alumno, fecha_hora, nombre, apellido1, apellido2, email) 
+  VALUES (OLD.id, NOW(), OLD.nombre, OLD.apellido1, OLD.apellido2, OLD.email);
 END;//
 DELIMITER ;
+```
+
+```sql
+-- Eliminamos a uno de los alumnos:
+DELETE FROM alumnos WHERE id = 7;
+
+-- Comprobamos que el alumno haya sido eliminado correctamente:
+SELECT * FROM alumnos WHERE id BETWEEN 5 AND 9;
+
+
+-- Comprobamos que se haya hecho la inserción en la tabla log_alumnos_eliminados:
+SELECT * FROM log_alumnos_eliminados;
+
 ```
