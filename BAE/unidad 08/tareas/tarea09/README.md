@@ -103,13 +103,24 @@ DELIMITER ;
 
 ```sql
 -- Eliminamos a uno de los alumnos:
-DELETE FROM alumnos WHERE id = 7;
+DELETE FROM alumno WHERE id = 7;
 
 -- Comprobamos que el alumno haya sido eliminado correctamente:
-SELECT * FROM alumnos WHERE id BETWEEN 5 AND 9;
-
+SELECT * FROM alumno WHERE id BETWEEN 5 AND 9;
++----+----------------+----------------+----------------+----------------------+
+| id | nombre         | apellido1      | apellido2      | email                |
++----+----------------+----------------+----------------+----------------------+
+|  5 | alumno104b10f5 | alumno104b1121 | alumno104b112b | nombre@gmail.com     |
+|  6 | alumno104c8164 | alumno104c8191 | alumno104c819a | aalualu@104c82c7.com |
+|  8 | alumno104ff28c | alumno104ff2bd | alumno104ff2c4 | aalualu@104ff3f1.com |
+|  9 | alumno1051571c | alumno10515742 | alumno10515747 | aalualu@105159f6.com |
++----+----------------+----------------+----------------+----------------------+
 
 -- Comprobamos que se haya hecho la inserción en la tabla log_alumnos_eliminados:
 SELECT * FROM log_alumnos_eliminados;
-
++----+-----------+---------------------+----------------+----------------+----------------+----------------------+
+| id | id_alumno | fecha_hora          | nombre         | apellido1      | apellido2      | email                |
++----+-----------+---------------------+----------------+----------------+----------------+----------------------+
+|  1 |         7 | 2024-05-23 02:18:57 | alumno104e483d | alumno104e486d | alumno104e4874 | aalualu@104e49b7.com |
++----+-----------+---------------------+----------------+----------------+----------------+----------------------+
 ```
