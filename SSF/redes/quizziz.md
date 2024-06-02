@@ -66,3 +66,6 @@ a) Física: anillo, Lógica: bus <br> b) Física: bus, Lógica: malla <br> c) **
 17. En el nivel 1, ¿Cuál es el dispositivo que, en general, no sería correcto?
 
 a) Un hub activo <br> b) Un concentrador pasivo <br> c) **Un repetidor pasivo** <br> d) Un repetidor activo
+
+
+# CAPA 4 (TRANSPORTE) + CAPAS 5, 6 Y 7 (SESIÓN, PRESENTACIÓN Y APLICACIÓN) + ADMINISTRACIÓN DE SISTEMAS OPERATIVOS EN RED
