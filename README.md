@@ -13,11 +13,11 @@
 <div align=justify>
 
 ## Contenido
-  1. [__Programación__](./PRO/README.md)
-  2. [__Sistemas informáticos__](./SSF/README.md)
-  3. [__Bases de datos__](./BAE/README.md)
-  4. [__Entornos de desarrollo__](./ETS/README.md)
-  5. [__Lenguajes de marcas__](./LND/README.md)
-  6. [__Formación y orientación laboral__](./FOL/README.md)
+  1. [__Programación__](./Programacion/README.md)
+  2. [__Sistemas informáticos__](./Sistemas%20Informaticos/README.md)
+  3. [__Bases de datos__](./Base%20de%20Datos/README.md)
+  4. [__Entornos de desarrollo__](./Entorno%20de%20Desarrollo/README.md)
+  5. [__Lenguajes de marcas__](./Lenguaje%20de%20Marcas/README.md)
+  6. [__Formación y orientación laboral__](./Formacion%20y%20Orientacion%20Laboral/README.md)
      
 </div>
