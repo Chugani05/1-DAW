@@ -1,11 +1,10 @@
-# 1-DAW
+# 1ºDAW
 
 <div align=center>
   <table>
     <tr>
-      <td><img src="./extras/cyberpunk1.gif" alt="me" width="95%"></td>
-      <td>Repositorio dedicado a todo lo hecho en el primer curso de Desarollo de Aplicaciones Web.
-</td>
+      <td><img src="./extras/cyberpunk1.gif" alt="me" width="100%"></td>
+      <td>Repositorio dedicado a todo lo hecho en el primer curso de Desarollo de Aplicaciones Web.</td>
     </tr>
   </table>
 </div>
